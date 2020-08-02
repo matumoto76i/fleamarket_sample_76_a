@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: fleamarket_sample_76_a_production
-  username: fleamarket_sample_76_a
-  password: <%= ENV['FLEAMARKET_SAMPLE_76_A_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
