@@ -91,6 +91,40 @@
   height: 300px;
 }
 // フッターscss
+.banner {
+  background-image: url(pict/bg-appBanner-pict.jpg);
+  height: 360px;
+  padding: 100px 40px;
+  background-size: cover;
+  background-position: center;
+
+  &__box {
+    color: #fff;
+    text-align: center;
+
+    &__title {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+    &__text {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+    &__icon {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+
+      .link__icon__btn {
+        width: 180px;
+        margin-right: 10px;
+        vertical-align: bottom;
+      }
+    }
+  }
+}
+
 .footer {
   background-color: #272727;
   padding: 60px 0;
@@ -137,6 +171,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  cursor: pointer;
 
   &__text {
     color: #fff;
