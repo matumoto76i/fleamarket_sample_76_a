@@ -1,0 +1,20 @@
+.header 
+  .header__inner
+    .main__header
+      .icon
+        =image_tag"logo/logo.png", :class => "furima__image"
+      .search__box
+        %input.search__box__input{:placeholder => "キーワードから探す"}
+        %button.search__box__btn{:type => "submit"}
+          =image_tag"icon/icon-search 1.png",:class => "img"
+    .nav
+      .nav__left
+        .cat__btn
+          カテゴリー
+        .brand__btn
+          ブランド
+      .nav__right
+        .login__btn
+          ログイン
+        .registration__btn
+          新規会員登録
