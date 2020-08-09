@@ -2,11 +2,13 @@
   .header__inner
     .main__header
       .icon
-        =image_tag"logo/logo.png", :class => "furima__image"
+        = link_to image_tag("logo/logo.png",class: "furima__image"),root_path
       .search__box
-        %input.search__box__input{:placeholder => "キーワードから探す"}
-        %button.search__box__btn{:type => "submit"}
-          =image_tag"icon/icon-search 1.png",:class => "img"
+        %input.search__box__input{placeholder: "キーワードから探す"}
+        %button.search__box__btn{type: "submit"}
+          = link_to image_tag("icon/icon-search 1.png",class: "img"),'/#'
+
+
     .nav
       .nav__left
         .cat__btn
