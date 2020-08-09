@@ -5,8 +5,8 @@
     .banner__box__text
       今すぐ無料ダウンロード
     .banner__box__icon
-      = link_to image_tag("logo/app-storee.svg", :class => "link__icon__btn"),'/#'
-      = link_to image_tag("logo/google-play.svg", :class =>"link__icon__btn"),'/#'
+      = link_to image_tag("logo/app-storee.svg", class: "link__icon__btn"),'/#'
+      = link_to image_tag("logo/google-play.svg", class: "link__icon__btn"),'/#'
 .footer
   .main__footer
     .content__box
@@ -36,11 +36,11 @@
         =link_to "FURIMAロゴ利用ガイドライン",'/#'
       %li.content__sub
         =link_to "お知らせ",'/#'
-  = link_to image_tag("logo/logo-white.png",:class => "footer__img"),root_path
+  = link_to image_tag("logo/logo-white.png",class: "footer__img"),root_path
   .footer__end
     ©FURIMA
 = link_to '/#' do
   .purchase__btn
     .purchase__btn__text
       出品する
-    = image_tag"icon/icon_camera.png",:class => "purchase__btn__img"
+    = image_tag"icon/icon_camera.png",class: "purchase__btn__img"
