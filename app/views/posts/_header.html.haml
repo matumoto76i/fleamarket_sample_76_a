@@ -2,157 +2,19 @@
   .header__inner
     .main__header
       .icon
-        = link_to image_tag("logo/logo.png",:class => "furima__image"),root_path
+        =image_tag"logo/logo.png", :class => "furima__image"
       .search__box
         %input.search__box__input{:placeholder => "キーワードから探す"}
         %button.search__box__btn{:type => "submit"}
-          = link_to image_tag("icon/icon-search 1.png",:class => "img"),'/#'
+          =image_tag"icon/icon-search 1.png",:class => "img"
     .nav
       .nav__left
-        .cat__btn 
-          =link_to "カテゴリー",'/#'
-        .tree__display__none
-          %ul.category__tree
-            %li.category__tree__item
-              =link_to "レディース",'/#'
-            %li.category__tree__item
-              =link_to "メンズ",'/#'
-            %li.category__tree__item
-              =link_to "ベビー・キッズ",'/#'
-            %li.category__tree__item
-              =link_to "インテリア・住まい・小物",'/#'
-            %li.category__tree__item
-              =link_to "おもちゃ・ホビー・グッズ",'/#'
-            %li.category__tree__item
-              =link_to "コスメ・香水・美容",'/#'
-            %li.category__tree__item
-              =link_to "家電・スマホ・カメラ",'/#'
-            %li.category__tree__item
-              =link_to "スポーツ・レジャー",'/#'
-            %li.category__tree__item
-              =link_to "ハンドメイド",'/#'
-            %li.category__tree__item
-              =link_to "チケット",'/#'
-            %li.category__tree__item
-              =link_to "自転車・オートバイ",'/#'
-            %li.category__tree__item
-              =link_to "その他",'/#'
-          %ul.subcat__tree
-            %li.subcat__tree__item
-              =link_to "トップス",'/#'
-            %li.subcat__tree__item
-              =link_to "ジャケット/アウター",'/#'
-            %li.subcat__tree__item
-              =link_to "パンツ",'/#'
-            %li.subcat__tree__item
-              =link_to "スカート",'/#'
-            %li.subcat__tree__item
-              =link_to "ワンピース",'/#'
-            %li.subcat__tree__item
-              =link_to "靴",'/#'
-            %li.subcat__tree__item
-              =link_to "ルームウェア/パジャマ",'/#'
-            %li.subcat__tree__item
-              =link_to "レッグウェア",'/#'
-            %li.subcat__tree__item
-              =link_to "帽子",'/#'
-            %li.subcat__tree__item
-              =link_to "バッグ",'/#'
-            %li.subcat__tree__item
-              =link_to "アクセサリー",'/#'
-            %li.subcat__tree__item
-              =link_to "ヘアアクセサリー",'/#'
-            %li.subcat__tree__item
-              =link_to "小物",'/#'
-            %li.subcat__tree__item
-              =link_to "時計",'/#'
-            %li.subcat__tree__item
-              =link_to "ウィッグ/エクステ",'/#'
-            %li.subcat__tree__item
-              =link_to "浴衣/水着",'/#'
-            %li.subcat__tree__item
-              =link_to "スーツ/フォーマル/ドレス",'/#'
-            %li.subcat__tree__item
-              =link_to "マタニティ",'/#'
-            %li.subcat__tree__item
-              =link_to "その他",'/#'
-          %ul.item__tree
-            %li.item__tree__item
-              =link_to "Tシャツ/カットソー（半袖/袖なし）",'/#'
-            %li.item__tree__item
-              =link_to "Tシャツ/カットソー（七分/長袖）",'/#'
-            %li.item__tree__item
-              =link_to "シャツ/ブラウス（半袖/袖なし）",'/#'
-            %li.item__tree__item
-              =link_to "シャツ/ブラウス（七分/長袖）",'/#'
-            %li.item__tree__item
-              =link_to "ポロシャツ",'/#'
-            %li.item__tree__item
-              =link_to "キャミソール",'/#'
-            %li.item__tree__item
-              =link_to "タンクトップ",'/#'
-            %li.item__tree__item
-              =link_to "ホルターネック",'/#'
-            %li.item__tree__item
-              =link_to "ニット/セーター",'/#'
-            %li.item__tree__item
-              =link_to "チュニック",'/#'
-            %li.item__tree__item
-              =link_to "カーディガン/ボレロ",'/#'
-            %li.item__tree__item
-              =link_to "アンサンブル",'/#'
-            %li.item__tree__item
-              =link_to "ベスト/ジレ",'/#'
-            %li.item__tree__item
-              =link_to "パーカー",'/#'
-            %li.item__tree__item
-              =link_to "トレーナー/スウェット",'/#'
-            %li.item__tree__item
-              =link_to "ペアトップ/チューブトップ",'/#'
-            %li.item__tree__item
-              =link_to "ジャージ",'/#'
-            %li.item__tree__item
-              =link_to "その他",'/#'
-            %li.item__tree__item
-              =link_to "Tシャツ/カットソー（半袖/袖なし）",'/#'
-            %li.item__tree__item
-              =link_to "Tシャツ/カットソー（７分/長袖）",'/#'
-            %li.item__tree__item
-              =link_to "シャツ/ブラウス（半袖/袖なし）",'/#'
-            %li.item__tree__item
-              =link_to "シャツ/ブラウス（７分/長袖）",'/#'
-            %li.item__tree__item
-              =link_to "ポロシャツ",'/#'
-            %li.item__tree__item
-              =link_to "キャミソール",'/#'
-            %li.item__tree__item
-              =link_to "タンクトップ",'/#'
-            %li.item__tree__item
-              =link_to "ホルターネック",'/#'
-            %li.item__tree__item
-              =link_to "ニット/セーター"
-            %li.item__tree__item
-              =link_to "チュニック",'/#'
-            %li.item__tree__item
-              =link_to "カーディガン/ボレロ",'/#'
-            %li.item__tree__item
-              =link_to "アンサンブル",'/#'
-            %li.item__tree__item
-              =link_to "ベスト/ジレ",'/#'
-            %li.item__tree__item
-              =link_to "パーカー",'/#'
-            %li.item__tree__item
-              =link_to "トレーナー/スウェット",'/#'
-            %li.item__tree__item
-              =link_to "ペアトップ/チューブトップ",'/#'
-            %li.item__tree__item
-              =link_to "ジャージ",'/#'
-            %li.item__tree__item
-              =link_to "その他",'/#'
+        .cat__btn
+          カテゴリー
         .brand__btn
-          =link_to "ブランド",'/#'
+          ブランド
       .nav__right
         .login__btn
-          =link_to "ログイン",'/#'
+          ログイン
         .registration__btn
-          =link_to "新規会員登録",'/#'
+          新規会員登録
