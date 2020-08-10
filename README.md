@@ -12,6 +12,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+ README
 # users_table
 |column|Type|Options|
 |------|----|-------|
@@ -123,6 +124,8 @@ Things you may want to cover:
 - has_many :user
 - has_many :item
 
+=======
+master
 
 * Database initialization
 
