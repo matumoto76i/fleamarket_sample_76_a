@@ -30,9 +30,9 @@ Things you may want to cover:
 # profiles_table
 |column|Type|Options|
 |------|----|-------|
-|firsr_name|string|null: false|
+|first_name|string|null: false|
 |last_name |string|null: false|
-|firsr_kana|string|null: false|
+|first_kana|string|null: false|
 |last_kana |string|null: false|
 |birthday  |date  |null: false|
 |phone     |string|
@@ -42,7 +42,7 @@ Things you may want to cover:
 
 # User_addresses_table
 |post_code |integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id(active_hash)|integer|null: false|
 |city      |string|null: false|
 |address   |string|
 |apartment |string|
@@ -50,6 +50,7 @@ Things you may want to cover:
 |user      |references|null: false, foregin_key: true|
 ## Association
 - belongs_to :user
+- belongs_to_active_hash :prefecture
 
 # cards_table
 |column|Type|Options|
@@ -69,20 +70,20 @@ Things you may want to cover:
 |user       |references|null: false, foregin_key: true|
 |category   |references|null: false, foregin_key: true|
 |brand      |references|null: false, foregin_key: true|
-|state      |references|null: false, foregin_key: true|
-|cost       |references|null: false, foregin_key: true|
-|region     |references|null: false, foregin_key: true|
-|period     |references|null: false, foregin_key: true|
+|state_id(active_hash) |integer|null: false, foregin_key: true|
+|cost_id(active_hash)  |integer|null: false, foregin_key: true|
+|region_id(active_hash)|integer|null: false, foregin_key: true|
+|period_id(active_hash)|integer|null: false, foregin_key: true|
 |buyer      |references|foregin_key: {to_table: :users}|
 |saler      |references|foregin_key: {to_table: :users}|
 ## Association
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
-- belongs_to :state
-- belongs_to :cost
-- belongs_to :period
-- belongs_to :region
+- belongs_to_active_hash :state
+- belongs_to_active_hash :cost
+- belongs_to_active_hash :period
+- belongs_to_active_hash :region
 - belongs_to :buyer, class_name: "User", foregin_key: "buyer_id"
 - belongs_to :saler, class_name: "User", foregin_key: "saler_id"
 - has_many :images
@@ -92,8 +93,10 @@ Things you may want to cover:
 |column|Type|Options|
 |------|----|-------|
 |name  |string|null: false|
+|ancestry|string|index: true|
 ## Association
 - has_many :items
+- has_ancestry
 
 # brands_table
 |column|Type|Options|
@@ -109,34 +112,6 @@ Things you may want to cover:
 |item |references|null: false, foregin_key: true|
 ## Association
 - belongs_to :item
-
-# states_table
-|column|Type|Options|
-|------|----|-------|
-|state |string|null: false|
-## Association
-- has_many :items
-
-# costs_table
-|column|Type|Options|
-|------|----|-------|
-|cost|string|null: false|
-## Association
-- has_many :items
-
-# regions_table
-|column|Type|Options|
-|------|----|-------|
-|region|string|null, false|
-## Association
-- has_many :items
-
-# periods_table
-|column|Type|Options|
-|------|----|-------|
-|period|string|null: false|
-## Association
-- has_many :items
 
 # comments_table
 |column|Type|Options|
