@@ -1,0 +1,14 @@
+.header{
+  width: 100%;
+}
+
+.header-logo{
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  &__img{
+    width: 120px;
+    height: 33px;
+    display: inline-block;
+  }
+}
