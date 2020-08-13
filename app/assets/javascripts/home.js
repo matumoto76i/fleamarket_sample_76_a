@@ -47,5 +47,13 @@ $(function () {
     function () {
       $(this).fadeTo(100, 1);
     }
-  )  
+  )
+  $(".optionArea__right").hover(
+    function () {
+      $(this).fadeTo(100, 0.5);
+    },
+    function () {
+      $(this).fadeTo(100, 1);
+    }
+  )
 });

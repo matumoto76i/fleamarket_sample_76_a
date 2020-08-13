@@ -154,16 +154,16 @@ a {
           &__images{
             margin-top: 20px;
 
-            &__big{
+            &__main_image{
               width: 500px;
               height: 350px;
             }
 
-            .product_box__small_list{
+            .product_box__small_lists{
               display: flex;
               justify-content: center;
 
-              &__small{
+              &__list{
                 width: 150px;
                 height: 100px;
               }
@@ -248,7 +248,8 @@ a {
 
           .new_comment{
             width: 100%;
-            height: 122px;
+            height: 110px;
+            padding: 5px;
           }
 
           p{
@@ -267,6 +268,7 @@ a {
             border: 1px #3ccace solid;
             border-radius: 100px;
             font-size: 20px;
+            margin-top: 10px;
           }
         }
       }
@@ -293,18 +295,18 @@ a {
       text-align: start;
 
       .related_images{
-        width: 250px;
+        width: 220px;
         height: 250px;
         padding-top: 10px;
-        background-color: #ffffff;
         color: black;
-        font-size: 14px;
+        font-size: 16px;
         text-align: center;
         padding-top: 20px;
 
         .list__main{
           padding: 0px 20px;
           text-align: start;
+          background-color: #fff;
 
           ul{
             display: flex;

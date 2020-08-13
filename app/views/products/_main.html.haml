@@ -26,12 +26,12 @@
           .product_box__name
             商品名
           .product_box__images
-            .product_box__big
+            .product_box__main_image
               = image_tag "pict/beef.jpeg", size: "500x350", class: "product__image"
-            .product_box__small_list
-              .product_box__small
+            .product_box__small_lists
+              .product_box__list
                 = image_tag "pict/a001.png", size: "140x90", class: "list__image"
-              .product_box__small
+              .product_box__list
                 = image_tag "pict/a004.png", size: "140x90", class: "list__image"
           .product_price
             ¥30
@@ -94,8 +94,9 @@
               %textarea.new_comment
               %p
                 相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
-              %button.comment_btn{type: "submit"}
-                %i.fa.fa-comment コメントする
+              %button{type: "submit", class: "comment_btn"}
+                %i.fa.fa-comment
+                  コメントをする
     .links
       %li
         = link_to "< 前の商品",'/#'
@@ -106,7 +107,7 @@
       .related_images
         = link_to '/#' do
           .container__box__list
-            = image_tag "pict/IMG_9072.jpeg" ,size: "200x150", class: "list__image"
+            = image_tag "pict/IMG_9072.jpeg" ,size: "220x150", class: "list__image"
             .list__main
               .list__main__name
                 ee
