@@ -94,7 +94,8 @@ a {
     }
   }
 }
-// メインページscss
+
+// ナビゲーション
 .main_nav{
   width: 100%;
   height: 50px;
@@ -105,8 +106,20 @@ a {
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   line-height: 50px;
   border-bottom: groove;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  &__list{
+    padding: 10px;
+
+    a:hover{
+      color: #3ccace;
+    }
+  }
 }
 
+// メインページscss
 .main {
   background-color: #f8f8f8;
 
@@ -124,6 +137,7 @@ a {
       &__top{
         width: 700px;
 
+        // 商品詳細説明、商品写真、コメント
         .product_box{
           width: 700px;
           padding: 24px 40px 40px;
@@ -171,6 +185,7 @@ a {
             font-size: 30px;
           }
 
+          // 商品の出品者〜発送の目安表
           .product_table{
             border: 1px #cccccc ;
             margin-bottom: 20px;
@@ -199,28 +214,31 @@ a {
             }
           }
 
+          // お気に入り、不適切な商品の通報
           .optionArea{
-            height: 30px;
-            font-size: 14px;
+            height: 40px;
+            font-size: 15px;
             display: flex;
             justify-content: space-between;
-            line-height: 30px;
+            line-height: 40px;
 
 
             &__left{
               border: 1px  solid #ffcc33;
               border-radius: 20px;
-              width: 150px;
+              width: 130px;
               color: #3ccace;
             }
 
             &__right{
               border: 1px black solid;
               border-radius: 5px;
-              width: 180px;
+              width: 160px;
             }
           }
         }
+
+        // コメント入力欄
         .commentBox{
           width: 100%;
           height: 300px;
@@ -254,6 +272,7 @@ a {
       }
     }
 
+    // その他商品へのリンク
     .links{
       display: block;
       width: 700px;
