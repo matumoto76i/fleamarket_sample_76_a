@@ -154,6 +154,11 @@ a {
           &__images{
             margin-top: 20px;
 
+            .list__image{
+              max-width: 90%;
+              height: auto;
+            }
+
             &__main_image{
               width: 500px;
               height: 350px;
@@ -288,7 +293,7 @@ a {
 
     .relatedItems{
       width: 700px;
-      height: 280px;
+      height: 300px;
       font-size: 20px;
       margin: 0 auto;
       color: #3ccace;
@@ -296,21 +301,33 @@ a {
 
       .related_images{
         width: 220px;
-        height: 250px;
+        height: 200px;
         padding-top: 10px;
         color: black;
         font-size: 16px;
         text-align: center;
         padding-top: 20px;
 
-        .list__main{
-          padding: 0px 20px;
-          text-align: start;
-          background-color: #fff;
+        .container__box__list{
+          height: 300px;
+          width: 200px;
 
-          ul{
-            display: flex;
-            justify-content: space-between;
+          .list__image{
+            height: 150px;
+            width: 200px;
+            max-width: 100%;
+            max-height: auto;
+          }
+
+          .list__main{
+            padding: 0px 20px;
+            text-align: start;
+            background-color: #fff;
+
+            ul{
+              display: flex;
+              justify-content: space-between;
+            }
           }
         }
       }
