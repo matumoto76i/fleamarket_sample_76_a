@@ -4,13 +4,13 @@
   height: 56px;
   justify-content: center;
 
-  .confirm__header__icon {
+  &__icon {
     height: 33px;
     width: 120px;
   }
 }
 .confirm__contents {
-  .confirm__contents__section {
+  &__section {
     max-width: 375px;
     margin: 0px auto;
     padding: 24px 16px;
