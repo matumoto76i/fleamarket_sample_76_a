@@ -4,4 +4,10 @@ class ProductsController < ApplicationController
 
   def confirm
   end
+  
+  def new
+  end
+
+  def create
+  end
 end
