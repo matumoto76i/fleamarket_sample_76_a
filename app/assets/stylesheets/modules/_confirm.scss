@@ -16,7 +16,7 @@
     padding: 24px 16px;
     border-top: 1px solid rgb(245, 245, 245);
 
-    .confirm__contents__title {
+    &__title {
       display: block;
       text-align: center;
       font-size: 17px;
@@ -24,7 +24,7 @@
     }
   }
   .confirm__contents__section {
-    .confirm__section__inner {
+    &__inner {
       display: flex;
       justify-content: space-between;
 
@@ -47,7 +47,7 @@
           .tax {
             font-size: 12px;
           }
-          .price {
+          .price2 {
             font-size: 15px;
             margin-left: 8px;
             font-weight: 600;
@@ -57,7 +57,7 @@
     }
   }
   .confirm__contents__section {
-    .confirm__pay {
+    &__pay {
       display: flex;
       font-size: 18px;
       font-weight: 600;
@@ -124,12 +124,12 @@
       text-decoration: underline;
     }
   }
-  .confirm__footer__image {
+  &__image {
     height: 65px;
     margin-bottom: 8px;
     width: 100px;
   }
-  .confirm__footer__end {
+  &__end {
     font-size: 12px;
   }
 }
