@@ -67,12 +67,13 @@
             .address-input_form
               %input{type: "text", class: "post_text", placeholder: "例）123-4567"}
           .profile__address__box
-            .require_box
-              %li 都道府県　
-              %li.p
-                必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）大阪府"}
+            = form_for '' do |f|
+              .require
+                %span.require__list 都道府県
+                %span.require__form 必須
+                .address-input_form
+                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "都道府県を選択", class: 'address'
+                  %i.fa_icon-chevron-down
           .profile__address__box
             .require_box
               %li 市町村区　

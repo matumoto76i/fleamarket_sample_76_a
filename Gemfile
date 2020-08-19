@@ -73,6 +73,7 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'devise'
+gem 'active_hash'
 
 group :production do
   gem 'unicorn'
