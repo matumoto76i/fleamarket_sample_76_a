@@ -9,11 +9,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.new-sign-header {
+.sign__header {
   background-color: #f8f8f8;
   height: 50px;
 
-  .sign-icon {
+  .sign__header-icon {
     text-align: center;
     line-height: 50px;
 
@@ -23,19 +23,19 @@ a {
   }
 }
 
-.main{
+.sign__main{
   background-color: #f8f8f8;
   width: 100vw;
   padding: 50px;
 
   
-  .main__sign{
+  &__contents{
     background-color: #ffffff;
     width: 700px;
     margin: 0 auto;
     
 
-    &__header{
+    .sign-main__header{
       width: 100%;
       height: 100px;
       text-align: center;
@@ -44,34 +44,17 @@ a {
       border-bottom: 1px black solid;
     }
 
-    &__contents{
+    .sign-form{
       width: 100%;
-      height: 500px;
       padding: 30px;
       background-color: #ffffff;
       text-align: center;
 
-      .sign-box{
+      &__box{
         width: 500px;
         height: 150px;
         padding-bottom: 20px;
         margin: 0 auto;
-      
-        .require_box{
-          height: 40px;
-          padding: 20px 5px 0px;
-          display: flex;
-          justify-content: start;
-      
-          .p{
-            height: 20px;
-            background-color: red;
-            font-size: 12px;
-            color: white;
-            align-items: center;
-            line-height: 20px;
-          }
-        }
       
         .input_form{
           width: 100%;
@@ -83,16 +66,22 @@ a {
             height: 50px;
             padding: 10px;
           }
+
+          .form_text{
+            width: 400px;
+            height: 50px;
+            padding: 10px;
+          }
         }
       }
     }
 
-    &__profile{
+    .sign-profile{
       width: 100%;
       background-color: #ffffff;
       text-align: center;
 
-      .profile-header{
+      &__header{
         width: 500px;
         height: 80px;
         margin: 0 auto;
@@ -104,27 +93,11 @@ a {
         }
       }
 
-      .sign-profile-box{
+      &__box{
         width: 500px;
         height: 120px;
         padding-bottom: 20px;
         margin: 0 auto;
-      
-        .require_box{
-          height: 40px;
-          padding: 20px 5px 0px;
-          display: flex;
-          justify-content: start;
-      
-          .p{
-            height: 20px;
-            background-color: red;
-            font-size: 12px;
-            color: white;
-            align-items: center;
-            line-height: 20px;
-          }
-        }
       
         .input_form{
           width: 100%;
@@ -144,27 +117,12 @@ a {
         }
       }
 
+      // 住所入力に関するcss
       .profile__address__box{
         width: 500px;
         height: 120px;
         padding-bottom: 20px;
         margin: 0 auto;
-
-        .require_box{
-          height: 40px;
-          padding: 20px 5px 0px;
-          display: flex;
-          justify-content: start;
-      
-          .p{
-            height: 20px;
-            background-color: red;
-            font-size: 12px;
-            color: white;
-            align-items: center;
-            line-height: 20px;
-          }
-        }
 
         .address-input_form{
           width: 100%;
@@ -178,22 +136,10 @@ a {
           }
         }
 
-        .require{
-          height: 40px;
-          padding: 20px 5px 0px;
-          text-align: start;
-
-          &__form{
-            background-color: red;
-            color: white;
-            align-items: center;
-            line-height: 20px;
-          }
-
+          // 都道府県入力
           .address-input_form{
             text-align: center;
             
-
             .address{
               box-sizing: border-box;
               width: 100%;
@@ -213,21 +159,58 @@ a {
             }
           }
         }
+
+        // 送信ボタン
+        .submit-btn{
+          width: 400px;
+          height: 50px;
+          margin: 20px 0;
+          background-color: red;
+          color: white;
+          font-size: 20px;
+        }
       }
     }
   }
-}
 
-.register-btn{
-  width: 400px;
-  height: 50px;
-  margin: 20px 0;
-  background-color: red;
-  color: white;
-  font-size: 20px;
-  
-
-}
 li{
   list-style: none;
+}
+
+// 年月日入力
+.year,.month,.day{
+  width: 130px;
+  height: 50px;
+}
+
+// spanタグ（必須）
+.require{
+  height: 40px;
+  padding: 20px 5px 0px;
+  text-align: start;
+
+  &__form{
+    background-color: red;
+    color: white;
+    align-items: center;
+    line-height: 20px;
+  }
+}
+
+// フッター
+.footer {
+  background-color: #272727;
+  padding: 60px 0;
+  color: #ffffff;
+  list-style: none;
+  text-align: center;;
+
+  .sign__footer {
+    height: 46px;
+    width: 160px;
+    margin: 0 auto;
+  }
+  .footer_end {
+    font-size: 14px;
+  }
 }
