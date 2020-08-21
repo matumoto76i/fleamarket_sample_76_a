@@ -1,0 +1,131 @@
+.mypage__container {
+  margin: 24px auto 0;
+  padding: 40px 80px;
+  display: flex;
+  background-color: whitesmoke;
+
+  .mypage__side__left {
+    width: 60%;
+    .mypage__side__list {
+      list-style: none;
+
+      .mypage__title {
+        background-color: #eee;
+      }
+      li {
+        font-weight: 600;
+        display: block;
+        min-height: 48px;
+        padding: 16px;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+
+        .icon-arrow {
+          position: relative;
+          display: inline-block;
+        }
+        .icon-arrow::before {
+          content: "";
+          width: 6px;
+          height: 6px;
+          border: 0px;
+          border-top: solid 2px #5bc0de;
+          border-right: solid 2px #5bc0de;
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          margin-top: -4px;
+        }
+      }
+      li:hover {
+        background-color: rgb(250, 241, 241);
+      }
+    }
+    &__header {
+      margin: 40px 4% 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .mypage__side__right {
+    width: 100%;
+    margin-left: 20px;
+
+    .mypage__user {
+      height: 155px;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(-135deg, #026c6a, #b1a1bc);
+
+      &__content {
+        display: block;
+        top: 50%;
+        left: 0;
+        right: 0;
+        color: #333;
+
+        .mypage__user__img {
+          height: 60px;
+          width: 60px;
+          vertical-align: middle;
+        }
+      }
+      .mypage__name {
+        margin: 8px 0 0;
+        font-size: 14px;
+      }
+      .mypage__number {
+        margin: 8px 0 0;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+    .mypage__user:hover {
+      opacity: 0.8;
+    }
+    .mypage__tab {
+      margin: 40px 0 0;
+      background-color: #fff;
+
+      &__head {
+        padding: 0 4%;
+        font-size: 16px;
+        line-height: 72px;
+      }
+      .mypage__tabs {
+        background-color: #eee;
+        display: flex;
+        text-align: center;
+
+        &__left {
+          font-size: 22px;
+          border-top: 2px solid #ea352d;
+          line-height: 72px;
+          width: 100%;
+          background-color: white;
+        }
+      }
+      .mypage__tab__content {
+        background-image: image-url("logo/logo.png");
+        background-color: rgba(255, 255, 255, 0.8);
+        background-blend-mode: lighten;
+        background-position: center 30px;
+        background-repeat: no-repeat;
+        padding: 160px 0 160px;
+        height: 500px;
+        background-size: 108px 85px;
+        text-align: center;
+        font-size: 26px;
+        color: #ccc;
+      }
+    }
+  }
+}
