@@ -9,13 +9,15 @@
           = f.label :出品画像
           %span.required 必須
         %p.atend 最大10枚までアップロードできます
-        .image-box
-          .item-box__container
-            =f.fields_for :images do |i|
-              .input-area
-                = i.label :image, class: "img-file" do
-                  = image_tag("icon/icon_camera.png", class: "image-icon")
-                  = i.file_field :image, class: "image-file"
+        #image-box
+          .image-container
+            =f.fields_for :images do |image|
+              .image-area{data: {index: image.index}}
+                = image.label :image, class: "img-file" do
+                  .input-area
+                    = image_tag("icon/icon_camera.png", class: "image-icon")
+                    = image.file_field :image, class: "image-file"
+                  %span.js-remove 削除
       .product-content__info
         .info-name
           .name
