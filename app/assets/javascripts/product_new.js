@@ -19,7 +19,11 @@ $(document).on('turbolinks:load', ()=>{
 
     // let file_field = document.querySelector('input[type=file]');
 
-    let fileIndex = [1,2,3,4,5];
+    let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+
+    lastIndex = $('.image-area:last').data('index');
+    fileIndex.splice(0, lastIndex);
+    $('.hidden-destroy').hide();
 
     $('#image-box').on('change', '.image-file', function(e){
       $('#image-box').append(buildFileField(fileIndex[0]));
@@ -31,6 +35,12 @@ $(document).on('turbolinks:load', ()=>{
     $('#image-box').on('click', '.js-remove', function(){
       $(this).parent().remove();
       if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    });
+
+    $('#image-box').on('click', '.js-remove', function(){
+      const targetIndex = $(this).parent().data('index')
+      const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+      if (hiddenCheck) hiddenCheck.prop('checked', true);
     });
 
   });

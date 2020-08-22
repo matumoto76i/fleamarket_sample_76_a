@@ -18,6 +18,12 @@
                     = image_tag("icon/icon_camera.png", class: "image-icon")
                     = image.file_field :image, class: "image-file"
                   %span.js-remove 削除
+                  - if @product.persisted?
+                    = image.check_box :_destroy, data:{ index: image.index}, class: 'hidden-destroy'
+                  - if @product.persisted?
+                    .image-area{data: {index: @product.image.cont}}
+                      = file_field_tag :image, name: "product[images_attributes][#{@product.image.count}]"
+                      %span.js-remove 削除
       .product-content__info
         .info-name
           .name
