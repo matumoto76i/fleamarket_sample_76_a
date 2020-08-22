@@ -1,3 +1,4 @@
+-# ログアウトページ
 = render partial:"posts/header"
 .mypage__container
   .mypage__side__left
@@ -54,5 +55,6 @@
   .chapter
     .chapter__inner
       .chapter__inner__content
-        %button.btn__red{:type => "submit"} ログアウト
+        = link_to 'destroy_user_session_path, method: :delete' do
+          %button.btn__red{:type => "submit"} ログアウト
 = render partial:"posts/footer"
