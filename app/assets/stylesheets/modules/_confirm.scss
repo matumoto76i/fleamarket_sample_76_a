@@ -1,0 +1,135 @@
+.confirm__header {
+  align-items: center;
+  display: flex;
+  height: 56px;
+  justify-content: center;
+
+  &__icon {
+    height: 33px;
+    width: 120px;
+  }
+}
+.confirm__contents {
+  &__section {
+    max-width: 375px;
+    margin: 0px auto;
+    padding: 24px 16px;
+    border-top: 1px solid rgb(245, 245, 245);
+
+    &__title {
+      display: block;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+    }
+  }
+  .confirm__contents__section {
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+
+      .confirm__section__image {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+      }
+      .confirm__section__right {
+        width: 100%;
+        margin-left: 16px;
+
+        .confirm__item__name {
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+        .confirm__item__price {
+          text-align: right;
+
+          .tax {
+            font-size: 12px;
+          }
+          .price2 {
+            font-size: 15px;
+            margin-left: 8px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .confirm__contents__section {
+    &__pay {
+      display: flex;
+      font-size: 18px;
+      font-weight: 600;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+
+      .price {
+        font-size: 24px;
+      }
+    }
+  }
+  .confirm__contents__section {
+    .confirm__payment__text {
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .confirm__payment__request {
+      color: rgb(0, 149, 238);
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+  .confirm__contents__section {
+    .buy__btn {
+      &__request {
+        color: rgb(255, 2, 17);
+        line-height: 1.5;
+        margin-bottom: 24px;
+        font-size: 14px;
+      }
+      button {
+        font-size: 17px;
+        font-weight: bold;
+        min-height: 48px;
+        padding: 0 24px;
+        width: 100%;
+        background-color: #ccc;
+        color: #888;
+      }
+    }
+  }
+}
+.confirm__footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 40px 0px 11px;
+  background-color: #272727;
+  color: #ffffff;
+
+  &__texts {
+    display: inline-block;
+    margin: -16px 0px 40px -16px;
+    display: flex;
+    justify-content: center;
+
+    .confirm__footer__text {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+    .confirm__footer__text a:hover {
+      text-decoration: underline;
+    }
+  }
+  &__image {
+    height: 35px;
+    margin-bottom: 8px;
+    width: 100px;
+  }
+  &__end {
+    font-size: 12px;
+  }
+}
