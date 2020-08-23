@@ -72,6 +72,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'devise'
+gem 'active_hash'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn'
