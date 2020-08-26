@@ -75,6 +75,10 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'payjp'
 gem 'dotenv-rails'
+gem 'active_hash'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn'
