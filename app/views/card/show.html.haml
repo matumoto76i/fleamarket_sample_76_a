@@ -1,4 +1,4 @@
--# ユーザーマイページ
+-# クレジット確認兼削除画面
 = render partial:"posts/header"
 .mypage__container
   .mypage__side__left
@@ -50,27 +50,16 @@
         =link_to "電話番号の確認",'/#'
         %i.icon-arrow
       %li
-        = link_to 'ログアウト','/users/show'
+        =link_to "ログアウト",'/users/show'
         %i.icon-arrow
-  .mypage__side__right
-    = link_to '/#' do
-      .mypage__user
-        .mypage__user__content
-          = image_tag "icon/member_photo_noimage_thumb.png",class: "mypage__user__img"
-        .mypage__name
-          テスト
-        .mypage__number
-          .mypage__number__assessment
-            評価０
-          .mypage__number__exhibits
-            出品数０
-    .mypage__tab
-      .mypage__tab__head
-        購入した商品
-      .mypage__tabs
-        .mypage__tabs__left.active
-          取引中
-      .mypage__tab__content
-        .mypage__tab__text.show
-          取引中の商品がありません
+  .card__confirmation
+    %label 登録クレジットカード情報
+    .card__confirmation__text 
+      = "**** **** **** " + @default_card_information.last4
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+    = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      %input{ type: "hidden", name: "card_id", value: "" }
+      %button 削除する
 = render partial:"posts/footer"

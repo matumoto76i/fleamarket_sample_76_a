@@ -38,7 +38,7 @@
         =link_to "発送元・お届け先住所変更",'/#'
         %i.icon-arrow
       %li
-        =link_to "支払い方法",'/#'
+        =link_to "支払い方法", new_card_path
         %i.icon-arrow
       %li
         =link_to "メール/パスワード",'/#'
@@ -50,11 +50,10 @@
         =link_to "電話番号の確認",'/#'
         %i.icon-arrow
       %li
-        =link_to "ログアウト",'/#'
+        =link_to "ログアウト",'/users/show'
         %i.icon-arrow
   .chapter
     .chapter__inner
       .chapter__inner__content
-        = link_to 'destroy_user_session_path, method: :delete' do
-          %button.btn__red{:type => "submit"} ログアウト
+        = link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'btn__red' 
 = render partial:"posts/footer"
