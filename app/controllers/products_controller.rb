@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Item.find(params[:id])
   end
 
   def update
@@ -31,6 +32,11 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to new_product_path
   end
 
   private
