@@ -78,7 +78,7 @@
             = f.label :発送までの日数
             %span.required 必須
           .period-form
-            = f.select :period, {}, {include_blank: "選択してください"} ,class: "form-text"
+            = f.collection_select :period_id, Period.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
       .product-content__price
         %p 価格 (¥300〜9,999,999)
         <br>

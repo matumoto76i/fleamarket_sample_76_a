@@ -2,5 +2,5 @@ class Product < ApplicationRecord
   has_many :images
   belongs_to :category
   accepts_nested_attributes_for :images, allow_destroy: true
-  validates :region,:state, presence: true
+  validates :region,:state,:period, presence: true
 end
