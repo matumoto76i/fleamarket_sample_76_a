@@ -116,20 +116,17 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
-<<<<<<< HEAD
-<<<<<<< HEAD
     erb2haml (0.1.5)
       html2haml
-=======
     devise-i18n (1.9.1)
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
->>>>>>> 8eb07c5d99c013bb31a4944d0ae85f659e8551d3
-=======
     devise-i18n (1.9.1)
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
->>>>>>> 8eb07c5d99c013bb31a4944d0ae85f659e8551d3
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
+    devise-i18n-views (0.3.7)
     erubi (1.9.0)
     erubis (2.7.0)
     excon (0.76.0)
@@ -360,6 +357,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   erb2haml
+  8eb07c5d99c013bb31a4944d0ae85f659e8551d3
   devise-i18n
   devise-i18n-views
   fog-aws

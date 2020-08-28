@@ -76,13 +76,10 @@ gem 'devise'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'erb2haml'
-8eb07c5d99c013bb31a4944d0ae85f659e8551d3
 gem 'active_hash'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
-8eb07c5d99c013bb31a4944d0ae85f659e8551d3
-8eb07c5d99c013bb31a4944d0ae85f659e8551d3
 
 group :production do
   gem 'unicorn'
