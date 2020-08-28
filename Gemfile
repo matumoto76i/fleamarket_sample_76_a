@@ -73,6 +73,7 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'ancestry'
+gem 'active_hash', '~> 2.3.0'
 
 group :production do
   gem 'unicorn'

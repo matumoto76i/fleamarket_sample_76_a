@@ -72,7 +72,7 @@
             = f.label :発送元の地域
             %span.required 必須
           .region-form
-            = f.select :region, {}, {include_blank: "選択してください"} ,class: "form-text"
+            = f.collection_select :region_id, Region.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
         .period
           .period-name
             = f.label :発送までの日数
