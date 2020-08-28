@@ -66,7 +66,7 @@
             = f.label :配送料の負担
             %span.required 必須
           .cost-form
-            = f.select :cost, {}, {include_blank: "選択してください"} ,class: "form-text"
+            = f.collection_select :cost_id, Cost.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
         .region
           .region-name
             = f.label :発送元の地域
