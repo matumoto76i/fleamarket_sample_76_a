@@ -1,0 +1,25 @@
+.sign-profile__header
+  %h1 本人確認
+  %ul
+    %li 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
+.sign-profile__main
+  .sign-profile__box
+    .require
+      %span.require__list お名前（全角）
+      %span.require__form 必須
+    .input_form
+      %input{type: "text", class: "familyname_text", placeholder: "例）大西"}
+      %input{type: "text", class: "firstname_text", placeholder: "例）賢治"}
+  .sign-profile__box
+    .require
+      %span.require__list カナ（全角）
+      %span.require__form 必須
+    .input_form
+      %input{type: "text", class: "familyname_text", placeholder: "例）オオニシ"}
+      %input{type: "text", class: "firstname_text", placeholder: "例）ケンジ"}
+  .profile__address__box
+    .require
+      %span.require__list 電話番号
+      %span.require__form-sub 任意
+    .address-input_form
+      %input{type: "text", class: "post_text", placeholder: "例)09012345678"}
