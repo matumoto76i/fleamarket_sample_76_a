@@ -57,7 +57,7 @@
             =f.label :商品の状態
             %span.required 必須
           .state-form
-            = f.select :state, {}, {include_blank: "選択してください"} ,class: "form-text"
+            = f.collection_select :state_id, State.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
       .product-content__send
         %p 配送について
         <br>
