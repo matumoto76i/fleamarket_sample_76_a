@@ -13,13 +13,13 @@
             %span.require__list ニックネーム
             %span.require__form 必須
           .input_form
-            %input{type: "text", class: "name_text", placeholder: "例）FURIMA一郎"}
+            = f.text_field :nickname, autofocus: true, maxlength: "6", placeholder: "例)FURIMA一郎"
         .sign-form__box
           .require
             %span.require__list メールアドレス
             %span.require__form 必須
           .input_form
-            = f.email_field :email, class: "form_text", placeholder: "PC・携帯どちらでも可" 
+            = f.email_field :email, class: "form_text", placeholder: "@ドメイン含む" , autofocus: true, autocomplete: "email"
         .sign-form__box
           .require
             %span.require__list パスワード
