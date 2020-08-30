@@ -1,0 +1,38 @@
+.sign-profile
+  = form_for(@address, url: addresses_path, method: :post) do |f|
+    = render "devise/shared/error_messages", resource: @address
+    .profile__address
+      .profile__address__box
+        .require
+          %span.require__list 郵便番号
+          %span.require__form 必須
+        .address-input_form
+          = f.text_field :post_code, class: "form_text", maxlength: "7", placeholder: "ハイフン入れずに入力して下さい"
+      .profile__address__box
+        = form_for(@address, url: addresses_path, method: :post) do |f| 
+          .require
+            %span.sign-form__require-list 都道府県
+            %span.require__form 必須
+            .address-input_form
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "都道府県を選択", class: 'address'
+              %i.fa_icon-chevron-down
+      .profile__address__box
+        .require
+          %span.require__list 市町村区
+          %span.require__form 必須
+        .address-input_form
+          = f.text_field :city, class: "post_text", placeholder: "例）大阪市中央区"
+      .profile__address__box
+        .require
+          %span.require__list 番地
+          %span.require__form 必須
+        .address-input_form
+          = f.text_field :address, class: "post_text", placeholder: "例）101-1"
+      .profile__address__box
+        .require
+          %span.require__list マンション・アパート名
+          %span.require__form-sub 任意
+        .address-input_form
+          = f.text_field :apartment, class: "post_text", placeholder: "例）難波ビル5-11"
+      .actions
+        = f.submit "登録する", class: "submit-btn"

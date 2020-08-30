@@ -30,6 +30,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_profile and return
     end
     @user.build_profile(@profile.attributes)
+    session["profile"] = @profile.attributes
+    @address = @user.build_address
+    render :new_address
+  end
+
+  def create_address
+    @user = User.new(session["devise.regist_data"]["user"])
+    @profile = Profile.new(session["profile"])
+    @address = Address.new(address_params)
+    unless @address.valid?
+      flash.now[:alert] = @address.errors.full_messages
+      render :new_address and return
+    end
+    @user.build_profile(@profile.attributes)
+    @user.build_address(@address.attributes)
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
@@ -63,6 +78,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :first_kana, :last_kana, :birth_date)
+  end
+
+  def address_params
+    params.require(:address).permit(:post_code, :prefecture_id, :city, :address)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

@@ -33,42 +33,8 @@
           .input_form
             = f.password_field :password_confirmation, class: "form_text", placeholder: "同上のパスワードを入力" , autocomplete: "new-password"
         %li ※英字と数字の両方を含めて入力してください
-      .sign-profile
-        .profile__address
-          .profile__address__box
-            .require
-              %span.require__list 郵便番号
-              %span.require__form 必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）123-4567"}
-          .profile__address__box
-            = form_for '' do |f| 
-              .require
-                %span.sign-form__require-list 都道府県
-                %span.require__form 必須
-                .address-input_form
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "都道府県を選択", class: 'address'
-                  %i.fa_icon-chevron-down
-          .profile__address__box
-            .require
-              %span.require__list 市町村区
-              %span.require__form 必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）大阪市葛飾区"}
-          .profile__address__box
-            .require
-              %span.require__list 番地
-              %span.require__form 必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）青山1-1-1"}
-          .profile__address__box
-            .require
-              %span.require__list マンション・アパート名
-              %span.require__form-sub 任意
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）難波ビル551"}
-          .actions
-            = f.submit "次へ進む", class: "submit-btn"
+        .actions
+          = f.submit "次へ進む", class: "submit-btn"
 .footer
   .main__footer
     .content__box
