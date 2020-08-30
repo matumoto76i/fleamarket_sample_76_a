@@ -27,8 +27,8 @@ Things you may want to cover:
 - has_one :card
 - has_many :items
 - has_many :comments
-- has_many :buyer_items, class_name: "Item"
-- has_many :saler_items, class_name: "Item"
+- has_many :buyer_products, class_name: "Item"
+- has_many :saler_products, class_name: "Item"
 
 # profiles_table
 |column|Type|Options|
@@ -44,6 +44,8 @@ Things you may want to cover:
 - belongs_to :user
 
 # User_addresses_table
+|column|Type|Options|
+|------|----|-------|
 |post_code |integer|null: false|
 |prefecture_id(active_hash)|integer|null: false|
 |city      |string|null: false|
@@ -65,7 +67,7 @@ Things you may want to cover:
 ## Association
 - belongs_to :user
 
-# items_table
+# products_table
 |column|Type|Options|
 |------|----|-------|
 |name       |string|
@@ -84,6 +86,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
+- belongs_to_active_hash :size
 - belongs_to_active_hash :state
 - belongs_to_active_hash :cost
 - belongs_to_active_hash :period
@@ -99,7 +102,7 @@ Things you may want to cover:
 |name  |string|null: false|
 |ancestry|string|index: true|
 ## Association
-- has_many :items
+- has_many :products
 - has_ancestry
 
 # brands_table
@@ -107,7 +110,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 ## Association
-- has_many :items
+- has_many :products
 
 # images_table
 |column|Type|Options|
@@ -115,7 +118,7 @@ Things you may want to cover:
 |image|string|
 |item |references|null: false, foregin_key: true|
 ## Association
-- belongs_to :item
+- belongs_to :product
 
 
 # comments_table
@@ -126,7 +129,7 @@ Things you may want to cover:
 |item|references|null: false, foregin_key: true|
 ## Association
 - has_many :user
-- has_many :item
+- has_many :products
 
 
 master
