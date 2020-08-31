@@ -10,7 +10,7 @@ a {
   color: inherit;
 }
 
-// ヘッダーcss
+// ヘッダーcss(ロゴマーク)
 .sign__header {
   background-color: #f8f8f8;
   height: 50px;
@@ -31,13 +31,11 @@ a {
   width: 100vw;
   padding: 50px;
 
-  
   &__contents{
     background-color: #ffffff;
     width: 700px;
     margin: 0 auto;
     
-
     .sign-main__header{
       width: 100%;
       height: 100px;
@@ -53,6 +51,7 @@ a {
       background-color: #ffffff;
       text-align: center;
 
+      // ログイン画面内、新規会員登録ページ遷移link
       &__link{
         display: block;
         width: 400px;
@@ -68,6 +67,7 @@ a {
         }
       }
 
+      // 入力フォーム全般
       &__box{
         width: 500px;
         height: 150px;
@@ -79,24 +79,40 @@ a {
           height: 60px;
           padding: 10px;
 
-          input[type="text"]{
-            width: 400px;
-            height: 50px;
-            padding: 10px;
-          }
-
           .form_text{
             width: 400px;
             height: 50px;
             padding: 10px;
           }
-          .birthday_form{
-            width: 500px;
+        }
+
+        // 都道府県入力欄
+        .address-input_form{
+          text-align: center;
+          
+          // 都道府県セレクトボックスCSS
+          .address{
+            box-sizing: border-box;
+            width: 100%;
+            height: 50px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+          }
+
+          select {
+            box-sizing: border-box;
+            width: 400px;
+            height: 50px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
           }
         }
       }
     }
 
+    // プロフィール入力ページCSS関連
     .sign-profile{
       width: 100%;
       background-color: #ffffff;
@@ -114,6 +130,7 @@ a {
         }
       }
 
+      // 氏名入力欄(フォームのサイズが他と異なる)
       &__box{
         width: 500px;
         height: 120px;
@@ -121,9 +138,12 @@ a {
         margin: 0 auto;
       
         .input_form{
-          width: 100%;
+          width: 420px;
           height: 60px;
           padding: 10px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
 
 
           input[type="text"]{
@@ -133,53 +153,10 @@ a {
           }
         }
       }
-
-      // 住所入力に関するcss
-      .profile__address__box{
-        width: 500px;
-        height: 120px;
-        padding-bottom: 20px;
-        margin: 0 auto;
-
-        .address-input_form{
-          width: 100%;
-          height: 60px;
-          padding: 10px;
-
-          input[type="text"]{
-            width: 400px;
-            height: 50px;
-            padding: 10px;
-          }
-        }
-
-          // 都道府県入力
-          .address-input_form{
-            text-align: center;
-            
-            .address{
-              box-sizing: border-box;
-              width: 100%;
-              height: 50px;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: #fff;
-            }
-
-            select {
-              box-sizing: border-box;
-              width: 400px;
-              height: 50px;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-            }
-          }
-      }
     }
   }
 
-  // 年月日入力
+  // 年月日入力(生年月日プルダウン)
   .year,.month,.day{
     width: 130px;
     height: 50px;
@@ -212,7 +189,6 @@ a {
     color: white;
     font-size: 20px;
     cursor: pointer;
-
   }
 
   li{
