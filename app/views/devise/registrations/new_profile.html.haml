@@ -6,10 +6,11 @@
     .sign-profile__main
       = form_for @profile do |f|
         = render "devise/shared/error_messages", resource: @profile
+        .sign-main__header
+          本人確認情報入力
         .sign-profile__header
-          %h1 本人確認
           %ul
-            %li 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
+            %li ※安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
         .sign-profile
           .sign-profile__box
             .require
