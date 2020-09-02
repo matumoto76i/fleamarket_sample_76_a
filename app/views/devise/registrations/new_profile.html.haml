@@ -1,6 +1,5 @@
-.sign__header
-  .sign__header-icon
-    = link_to image_tag('logo/logo.png',class: 'icon-image')
+.sign-header
+  = render "sign_header"
 .sign__main
   .sign__main__contents
     .sign-profile__main
@@ -17,15 +16,15 @@
               %span.require__list お名前（全角）
               %span.require__form 必須
             .input_form
-              = f.text_field :first_name, class: "name_text", placeholder: "全角氏"
-              = f.text_field :last_name, class: "name_text", placeholder: "全角名"
+              = f.text_field :first_name, class: "name_text", placeholder: "例）鈴木"
+              = f.text_field :last_name, class: "name_text", placeholder: "例）太郎"
           .sign-profile__box
             .require
-              %span.require__list カナ（全角）
+              %span.require__list フリガナ（全角）
               %span.require__form 必須
             .input_form
-              = f.text_field :first_kana, class: "name_text", placeholder: "全角カナ"
-              = f.text_field :last_kana, class: "name_text", placeholder: "全角カナ"
+              = f.text_field :first_kana, class: "name_text", placeholder: "例）スズキ"
+              = f.text_field :last_kana, class: "name_text", placeholder: "例）タロウ"
           .sign-form__box
             .require
               %span.require__list 生年月日
@@ -35,40 +34,11 @@
               = f.date_select :birth_date, with_css_classes:'birthday-date', use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
           .sign-form__box
             .require
-              %span.require__list 電話番号
+              %span.require__list お届け先電話番号
               %span.require__form-sub 任意
             .input_form
-              = f.text_field :phone, class: "form_text", placeholder: "例）09012345678"
+              = f.text_field :phone, class: "form_text", placeholder: "例）090-1234-5678"
           .actions
             = f.submit "次へ進む", class: "submit-btn"
-.footer
-  .main__footer
-    .content__box
-      %h2.content__head
-        FURIMAについて
-      %li.content__sub
-        =link_to "会社概要（運営会社）",'/#'
-      %li.content__sub
-        =link_to "プライバシーポリシー",'/#'
-      %li.content__sub
-        =link_to "FURIMA利用規約",'/#'
-    .content__box
-      %h2.content__head
-        FURIMAを見る
-      %li.content__sub
-        =link_to "カテゴリー一覧",'/#'
-      %li.content__sub
-        =link_to "ブランド一覧",'/#'
-    .content__box
-      %h2.content__head
-        ヘルプ＆ガイド
-      %li.content__sub
-        =link_to "FURIMAガイド",'/#'
-      %li.content__sub
-        =link_to "FURIMAロゴ利用ガイドライン",'/#'
-      %li.content__sub
-        =link_to "お知らせ",'/#'
-  .sign__footer
-    = link_to image_tag("logo/logo-white.png",class: "footer__img"),root_path
-  .footer__end
-    ©FURIMA
+.sign-footer
+  = render "sign_footer"

@@ -77,7 +77,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :first_kana, :last_kana, :birth_date)
+    params.require(:profile).permit(:first_name, :last_name, :first_kana, :last_kana, :birth_date, :phone)
   end
 
   def address_params
