@@ -15,7 +15,7 @@
             %span.require__list 郵便番号
             %span.require__form 必須
           .input_form
-            = f.text_field :post_code, class: "form_text", maxlength: "8", placeholder: "例）123-4567"
+            = f.text_field :post_code, class: "form_text", placeholder: "例）123-4567"
         .sign-form__box
           = form_for(@address, url: addresses_path, method: :post) do |f| 
             .require
