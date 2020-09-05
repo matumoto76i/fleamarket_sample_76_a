@@ -3,6 +3,6 @@ class Address < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to :user, optional: true
   
-  validates :prefecture_id, :city, :address, presence: true
-  validates :post_code, presence: true, format: {with: /\A[0-9-]{,8}\z/}
+  validates :post_code, :prefecture_id, :city, :address, presence: true
+  validates :post_code, format: {with: /\A[0-9-]{,14}\z/}
 end
