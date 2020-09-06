@@ -1,134 +1,41 @@
-.sign__header
-  .sign__header-icon
-    = link_to image_tag('logo/logo.png',class: 'icon-image')
+.sign-header
+  = render "sign_header"
 .sign__main
   .sign__main__contents
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
       .sign-main__header
         新規会員情報入力
+      .sign-profile__header
+        %ul
+          %li ※安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
       .sign-form
         .sign-form__box
           .require
             %span.require__list ニックネーム
             %span.require__form 必須
           .input_form
-            = f.text_field :name, autofocus: true, maxlength: "6", placeholder: "例)FURIMA一郎"
+            = f.text_field :name, autofocus: true, class: "form_text", placeholder: "例)FURIMA一郎"
         .sign-form__box
           .require
             %span.require__list メールアドレス
             %span.require__form 必須
           .input_form
-            = f.email_field :email, class: "form_text", placeholder: "@ドメイン含む" , autofocus: true, autocomplete: "email"
+            = f.email_field :email, class: "form_text", placeholder: "@,ドメイン必須になります" , autofocus: true, autocomplete: "email"
         .sign-form__box
           .require
             %span.require__list パスワード
             %span.require__form 必須
           .input_form
-            = f.password_field :password, class: "form_text", placeholder: "英数字含む７文字以上" , autocomplete: "off"
+            = f.password_field :password, class: "form_text", placeholder: "英数字含む７文字以上" , autocomplete: "new-password"
         .sign-form__box
           .require
             %span.require__list 確認用パスワード
             %span.require__form 必須
           .input_form
-            = f.password_field :password_confirmation, class: "form_text", placeholder: "同上のパスワードを入力" , autocomplete: "off"
+            = f.password_field :password_confirmation, class: "form_text", placeholder: "確認の為、再度パスワードを入力" , autocomplete: "new-password"
         %li ※英字と数字の両方を含めて入力してください
-      .sign-profile
-        .sign-profile__header
-          %h1 本人確認
-          %ul
-            %li 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません
-        .sign-profile__main
-          .sign-profile__box
-            .require
-              %span.require__list お名前（全角）
-              %span.require__form 必須
-            .input_form
-              %input{type: "text", class: "familyname_text", placeholder: "例）大西"}
-              %input{type: "text", class: "firstname_text", placeholder: "例）賢治"}
-          .sign-profile__box
-            .require
-              %span.require__list カナ（全角）
-              %span.require__form 必須
-            .input_form
-              %input{type: "text", class: "familyname_text", placeholder: "例）オオニシ"}
-              %input{type: "text", class: "firstname_text", placeholder: "例）ケンジ"}
-          .sign-profile__box
-            .require
-              %span.require__list 生年月日
-              %span.require__form 必須
-            .birthday_form
-              %br/
-              = f.date_select :birth_date, with_css_classes:'birthday-date', use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
-        .profile__address
-          .profile__address__box
-            .require
-              %span.require__list 郵便番号
-              %span.require__form 必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）123-4567"}
-          .profile__address__box
-            = form_for '' do |f| 
-              .require
-                %span.sign-form__require-list 都道府県
-                %span.require__form 必須
-                .address-input_form
-                  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "都道府県を選択", class: 'address'
-                  %i.fa_icon-chevron-down
-          .profile__address__box
-            .require
-              %span.require__list 市町村区
-              %span.require__form 必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）大阪市葛飾区"}
-          .profile__address__box
-            .require
-              %span.require__list 番地
-              %span.require__form 必須
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）青山1-1-1"}
-          .profile__address__box
-            .require
-              %span.require__list マンション・アパート名
-              %span.require__form-sub 任意
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例）難波ビル551"}
-          .profile__address__box
-            .require
-              %span.require__list 電話番号
-              %span.require__form-sub 任意
-            .address-input_form
-              %input{type: "text", class: "post_text", placeholder: "例)09012345678"}
-          .actions
-            = f.submit "登録する", class: "submit-btn"
-.footer
-  .main__footer
-    .content__box
-      %h2.content__head
-        FURIMAについて
-      %li.content__sub
-        =link_to "会社概要（運営会社）",'/#'
-      %li.content__sub
-        =link_to "プライバシーポリシー",'/#'
-      %li.content__sub
-        =link_to "FURIMA利用規約",'/#'
-    .content__box
-      %h2.content__head
-        FURIMAを見る
-      %li.content__sub
-        =link_to "カテゴリー一覧",'/#'
-      %li.content__sub
-        =link_to "ブランド一覧",'/#'
-    .content__box
-      %h2.content__head
-        ヘルプ＆ガイド
-      %li.content__sub
-        =link_to "FURIMAガイド",'/#'
-      %li.content__sub
-        =link_to "FURIMAロゴ利用ガイドライン",'/#'
-      %li.content__sub
-        =link_to "お知らせ",'/#'
-  .sign__footer
-    = link_to image_tag("logo/logo-white.png",class: "footer__img"),root_path
-  .footer__end
-    ©FURIMA
+        .actions
+          = f.submit "次へ進む", class: "submit-btn"
+.sign-footer
+  = render "sign_footer"
