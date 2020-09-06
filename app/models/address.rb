@@ -4,5 +4,5 @@ class Address < ApplicationRecord
   belongs_to :user, optional: true
   
   validates :post_code, :prefecture_id, :city, :address, presence: true
-  validates :post_code, format: {with: /\A[0-9-]{,14}\z/}
+  validates :post_code, format: {with: /\A[0-9-]{,8}\z/}
 end

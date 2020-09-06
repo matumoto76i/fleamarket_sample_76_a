@@ -32,11 +32,11 @@ describe Address do
       expect(address.errors[:post_code]).to include("を入力してください")
     end
 
-    # it "post_codeは9文字以上だと登録できない" do
-    #   address = build(:address, post_code: "123456789")
-    #   address.valid?
-    #   expect(address.errors[:post_code]).to include("は不正な値です")
-    # end
+    it "post_codeは9文字以上だと登録できない" do
+      address = build(:address, post_code: "123456789")
+      address.valid?
+      expect(address.errors[:post_code]).to include("は不正な値です")
+    end
 
     it "post_codeは8文字以下では登録できる" do
       address = build(:address, post_code: "123-5678")
