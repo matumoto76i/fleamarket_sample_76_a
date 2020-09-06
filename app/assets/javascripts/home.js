@@ -47,7 +47,7 @@ $(function () {
     function () {
       $(this).fadeTo(100, 1);
     }
-  )
+  );
   $(".optionArea__right").hover(
     function () {
       $(this).fadeTo(100, 0.5);
@@ -55,5 +55,14 @@ $(function () {
     function () {
       $(this).fadeTo(100, 1);
     }
-  )
+  );
+  $(".mypage__tabs__left").click(function () {
+    $(".active").removeClass("active");
+    $(this).addClass("active");
+    $(".show").removeClass("show");
+    // クリックしたタブからインデックス番号を取得
+    const index = $(this).index();
+    // クリックしたタブと同じインデックス番号をもつコンテンツを表示
+    $(".mypage__tab__text").eq(index).addClass("show");
+  });
 });

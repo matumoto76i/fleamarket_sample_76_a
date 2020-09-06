@@ -1,0 +1,65 @@
+-# クレジット確認兼削除画面
+= render partial:"posts/header"
+.mypage__container
+  .mypage__side__left
+    .mypage__side__list
+      %li.mypage__title
+        =link_to "マイページ",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品する",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品した商品、出品中",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品した商品、取引中",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品した商品、売却済み",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "購入した商品、取引中",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "購入した商品、過去の取引",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "評価一覧",'/#'
+        %i.icon-arrow
+    .mypage__side__header
+      =link_to "設定",'/#'
+    .mypage__side
+    .mypage__side__list
+      %li
+        =link_to "プロフィール",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "発送元・お届け先住所変更",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "支払い方法", new_card_path
+        %i.icon-arrow
+      %li
+        =link_to "メール/パスワード",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "本人情報",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "電話番号の確認",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "ログアウト",'/users/show'
+        %i.icon-arrow
+  .card__confirmation
+    %label 登録クレジットカード情報
+    .card__confirmation__text 
+      = "**** **** **** " + @default_card_information.last4
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+    = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+      %input{ type: "hidden", name: "card_id", value: "" }
+      %button 削除する
+= render partial:"posts/footer"
