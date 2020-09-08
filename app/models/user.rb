@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  validates :name, presence: true, length: { maximum: 8 }, uniqueness: true
+  validates :nickname, presence: true, length: { maximum: 8 }, uniqueness: true
 
   # パスワードのバリデーション(半角英数字のみ入力を許可)
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
