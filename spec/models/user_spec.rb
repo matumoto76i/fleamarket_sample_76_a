@@ -2,26 +2,26 @@ require 'rails_helper'
 describe User do
   describe '#create' do
 
-    it "nameとemail、passwordとpassword_confirmationが存在すれば登録できること" do
+    it "nicknameとemail、passwordとpassword_confirmationが存在すれば登録できること" do
       user = build(:user)
       expect(user).to be_valid
     end
 
     # ニックネームに関するテストコード
-    it "nameがない場合は登録できないこと" do
-      user = build(:user, name: nil)
+    it "nicknameがない場合は登録できないこと" do
+      user = build(:user, nickname: nil)
       user.valid?
-      expect(user.errors[:name]).to include("を入力してください")
+      expect(user.errors[:nickname]).to include("を入力してください")
     end
 
-    it "nameが9文字以上であれば登録できない" do
-      user = build(:user, name: "aaaaaaaaa")
+    it "nicknameが9文字以上であれば登録できない" do
+      user = build(:user, nickname: "aaaaaaaaa")
       user.valid?
-      expect(user.errors[:name]).to include("は8文字以内で入力してください")
+      expect(user.errors[:nickname]).to include("は8文字以内で入力してください")
     end
 
-    it "nameが8文字以下では登録できる" do
-      user = build(:user, name: "aaaaaaaa")
+    it "nicknameが8文字以下では登録できる" do
+      user = build(:user, nickname: "aaaaaaaa")
       expect(user).to be_valid
     end
 
