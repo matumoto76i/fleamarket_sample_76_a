@@ -75,8 +75,9 @@ Things you may want to cover:
 |price      |integer|
 |user       |references|null: false, foregin_key: true|
 |category   |references|null: false, foregin_key: true|
-|brand      |references|null: false, foregin_key: true|
+|brand      |references|foregin_key: true|
 |state_id(active_hash) |integer|null: false, foregin_key: true|
+|size_id(active_hash)  |integer|null: false, foregin_key: true|
 |cost_id(active_hash)  |integer|null: false, foregin_key: true|
 |region_id(active_hash)|integer|null: false, foregin_key: true|
 |period_id(active_hash)|integer|null: false, foregin_key: true|
