@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
 
   function ChildrenBox(insertHTML){
     let childHtml = "";
-    childHtml = `<div class="category-form" id="category_content">
+    childHtml = `<div class="category-form" id="children_content">
                         <select id="child_category_form" class="form-text" name="product[category_id]" >
                           <option value>選択してください</option>
                           ${insertHTML}
@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function(){
   }
   function GrandchildrenBox(insertHTML){
     let childHtml = "";
-    childHtml = `<div class="category-form" id="category_content">
+    childHtml = `<div class="category-form" id="grandchildren_content">
                         <select id="grand_category_form" class="form-text" name="product[category_id]" >
                           <option value>選択してください</option>
                           ${insertHTML}
@@ -39,6 +39,9 @@ $(document).on('turbolinks:load', function(){
       })
       
       .done(function(data){
+        console.log
+        $("#children_content").remove();
+        $("#grandchildren_content").remove();
         let insertHTML = '';
         data.forEach(function(child){
           insertHTML += build_Option(child);
@@ -47,7 +50,10 @@ $(document).on('turbolinks:load', function(){
       })
       .fail(function(){
         alert("通信エラー");
-      });
+      })
+    } else {
+      $("#children-box").remove();
+      $("#grandchildren-box").remove();
     }
   });
 
@@ -63,8 +69,8 @@ $(document).on('turbolinks:load', function(){
       })
       
       .done(function(grandchildren){
-        console.log("test");
         if (grandchildren.length !=0){
+          $("#grandchildren_content").remove();
           let insertHTML = '';
           grandchildren.forEach(function(grandchild){
             insertHTML += build_Option(grandchild);
@@ -75,6 +81,8 @@ $(document).on('turbolinks:load', function(){
       .fail(function(){
         alert("通信エラー");
       });
+    } else {
+      $("#grandchildren-box").remove();
     }
   });
 
