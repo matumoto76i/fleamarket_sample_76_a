@@ -54,6 +54,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'rspec-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -75,7 +76,14 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'ancestry'
-gem 'active_hash', '~> 2.3.0'
+gem 'devise'
+gem 'payjp'
+gem 'dotenv-rails'
+gem 'erb2haml'
+gem 'active_hash'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn'

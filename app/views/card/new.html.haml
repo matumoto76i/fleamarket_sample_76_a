@@ -1,0 +1,113 @@
+-# クレジット登録画面
+= render partial:"posts/header"
+.mypage__container
+  .mypage__side__left
+    .mypage__side__list
+      %li.mypage__title
+        =link_to "マイページ",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品する",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品した商品、出品中",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品した商品、取引中",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "出品した商品、売却済み",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "購入した商品、取引中",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "購入した商品、過去の取引",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "評価一覧",'/#'
+        %i.icon-arrow
+    .mypage__side__header
+      =link_to "設定",'/#'
+    .mypage__side
+    .mypage__side__list
+      %li
+        =link_to "プロフィール",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "発送元・お届け先住所変更",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "支払い方法", new_card_path
+        %i.icon-arrow
+      %li
+        =link_to "メール/パスワード",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "本人情報",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "電話番号の確認",'/#'
+        %i.icon-arrow
+      %li
+        =link_to "ログアウト",'/users'
+        %i.icon-arrow
+  = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+    .card
+      .card__header
+        .card__header__title
+          クレジットカード情報入力
+      .card__main
+        .card__main__inner
+          .card__section
+            .card__section__title
+              %label カード番号
+              .require
+                必須
+            = text_field_tag "number", "", class: "card__section__text", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+            %br
+          .card__section
+            .card__section__title
+              %label 有効期限
+              .require
+                必須
+            .card__section__textbox
+              %select#exp_month{name: "exp_month", type: "text",class: "card__section__text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              %span 月/
+              %select#exp_year{name: "exp_year", type: "text", class: "card__section__text"}
+                %option{value: ""} --
+                %option{value: "2019"}19
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+              %span 年
+              %br
+          .card__section
+            .card__section__title
+              %label セキュリティコード
+              .require
+                必須
+            = text_field_tag "cvc", "", class: "card__section__text", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+            #card_token
+          = submit_tag "追加する", id: "token_submit", class: "to-add__btn"
+= render partial:"posts/footer"
