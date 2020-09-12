@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:index]
-  before_action :set_parents, only: [:new, :new, :create]
+  before_action :set_parents, only: [:new, :create, :edit]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -8,14 +7,14 @@ class ProductsController < ApplicationController
   
   def new
     @product = Product.new
-    @product.images.new
-
+    @product.images.build
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
-    if @product.save
-      redirect_to new_product_path
+    if @product.save!
+      redirect_to root_path
     else
       render :new
     end
@@ -25,7 +24,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Item.find(params[:id])
+    @product = Product.find(params[:id])
+    @product.images.build
   end
 
   def update
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to new_product_path
+    redirect_to root_path
   end
 
   def get_category_children
@@ -52,15 +52,11 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, images_attributes: [:image, :_destroy, :id] )
+    params.require(:product).permit(:name, :description, :price, :brand_id, :size_id, :state_id, :cost_id, :region_id, :period_id, :category_id, images_attributes: [:image, :_destroy, :id] )
   end
 
   def set_parents
     @category_parents = Category.where(ancestry: nil)
-  end
-
-  def set_product
-    @product = Product.find(params[:id])
   end
 
 
