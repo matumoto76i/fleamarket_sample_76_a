@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
     if @product.save!
       redirect_to root_path
@@ -23,23 +22,6 @@ class ProductsController < ApplicationController
   def show
   end
 
-  def edit
-    @product = Product.find(params[:id])
-    @product.images.build
-  end
-
-  def update
-    if @product.update(product_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @product.destroy
-    redirect_to root_path
-  end
 
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
