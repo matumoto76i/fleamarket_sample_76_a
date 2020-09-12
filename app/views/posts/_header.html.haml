@@ -152,7 +152,10 @@
         .brand__btn
           =link_to "ブランド",'/#'
       .nav__right
-        .login__btn
-          =link_to "ログイン",'/#'
-        .registration__btn
-          =link_to "新規会員登録",'/#'
+        - if user_signed_in?
+          .login__btn
+            =link_to "マイページ","/users/#{current_user.id}"
+        - else
+          .registration__btn
+            =link_to "ログイン",new_user_session_path, method: :get
+            =link_to "新規会員登録",new_user_registration_path, method: :get
