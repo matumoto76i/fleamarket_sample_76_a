@@ -183,8 +183,13 @@
 //画像表示欄のCSS
 
 .preview{
+<<<<<<< Updated upstream
   width: 100px;
   height: 120px;
+=======
+  width: 110px;
+  height: 130px;
+>>>>>>> Stashed changes
 }
 
 .lower-box {
@@ -192,7 +197,7 @@
   text-align: center;
   .delete-box {
     color: #00b0ff;
-    width: 100px;
+    width: 110px;
     height: 40px;
     line-height: 40px;
     border: 1px solid #eee;
@@ -219,15 +224,21 @@
 
 .prev-content{
   display: flex;
-  .preview_box {
-    height: 162px;
-    width: 112px;
-    margin: 0 15px 10px 0;
-    .upper-box {
-      height: 120px;
-      width: 100%;
-    }
-  }
+}
+
+.wrapper-box {
+  height: 130px;
+  width: 120px;
+}
+
+.image-preview{
+  height: 162px;
+  width: 120px;
+  margin: 0 5px;
+}
+
+.image-preview_box{
+  width: 110px;
 }
 
 
@@ -242,12 +253,12 @@ input{
 
 #previews{
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 
 li.input{
   width: 100%;
-  height: 160px;
+  height: 170px;
   background-color: #ccc;
   border: 1px solid silver;
   position: relative;
