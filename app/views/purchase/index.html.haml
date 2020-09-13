@@ -22,17 +22,11 @@
       支払い方法
     .confirm__payment__request
       %i.fas.fa-bullseye
-      =link_to "登録して下さい",'/#'
-  .confirm__contents__section
-    .confirm__payment__text
-      配送先
-    .confirm__payment__request
-      %i.fas.fa-bullseye
-      =link_to "登録して下さい",'/#'
+      =link_to "登録して下さい",new_card_path
   .confirm__contents__section
     .buy__btn
       .buy__btn__request
-        配送先と支払い方法の入力を完了してください。
+        支払い方法の入力を完了してください。
       %button 購入する
 .confirm__footer
   .confirm__footer__texts
@@ -45,6 +39,3 @@
   = link_to image_tag("logo/logo-white.png",class: "confirm__footer__image"),root_path
   .confirm__footer__end
     ©FURIMA
-
-
-
