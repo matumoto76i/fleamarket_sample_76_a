@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
 
   $(document).on('click', '.image_upload', function(){
 
-    let preview = $('<div class="preview_box"><div class="upper-box"><img class="preview"></div><div class="lower-box"><div class="delete-box">削除</div></div></div>'); 
+    let preview = $('<div class="image-preview_box"><div class="wrapper-box"><img class="preview"></div><div class="lower-box"><div class="delete-box">削除</div></div></div>'); 
   
     function append_input(num){
       let  html = $(`<li class="input"><label class="upload-label"><div class="input-area"><input class="hidden image_upload" type="file" name="product[images_attributes][${num}][image]" id = "product_images_attributes_${num}_image"></div></div></label></li>`);
@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
       $li.addClass('image-preview'); 
       $lis = $ul.find('.image-preview'); 
       $('#previews li').css({
-        'width': `100px`
+        'width': `110px`
       })
 
 
