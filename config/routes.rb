@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show, :new, :create]
-  resources :products, only: [:index, :new, :create]
+  resources :products, only: [:index, :new, :create, :edit, :update]
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
