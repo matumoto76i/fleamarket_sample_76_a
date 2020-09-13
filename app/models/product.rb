@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
   belongs_to :category
   belongs_to :user, optional: true
-  belongs_to :brand, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :name, presence: true, length: {maximum: 40}
   validates :description,:price,:category,:region,:state,:period,:cost,:size, presence: true 
