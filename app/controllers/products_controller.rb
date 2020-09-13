@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :brand_id, :size_id, :state_id, :cost_id, :region_id, :period_id, :category_id, images_attributes: [:image, :_destroy, :id] )
+    params.require(:product).permit(:name, :description, :price, :brand_id, :size_id, :state_id, :cost_id, :region_id, :period_id, :category_id, images_attributes: [:image, :_destroy, :id] ).merge(user_id: current_user.id)
   end
 
   def set_parents
