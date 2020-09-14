@@ -6,17 +6,22 @@
       購入内容の確認
   .confirm__contents__section
     .confirm__contents__section__inner
-      = image_tag "pict/beef.jpeg", class: "confirm__section__image"
+      = image_tag @product.images[0].image.to_s
       .confirm__section__right
         .confirm__item__name
-          テスト
+          = @product.name
         .confirm__item__price
           %span.tax 送料込み（税込み）
-          %span.price2 ¥10000
+          %span.price2 
+            = @product.price
+            円
   .confirm__contents__section
     .confirm__contents__section__pay
       %span.payment 支払い金額
-      %span.price ¥10000
+      %span.price 
+        ¥
+        = @product.price
+        円
   .confirm__contents__section
     .confirm__payment__text
       支払い方法

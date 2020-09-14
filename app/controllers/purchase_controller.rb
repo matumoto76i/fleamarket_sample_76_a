@@ -2,7 +2,7 @@ class PurchaseController < ApplicationController
  
   require 'payjp'
 
-  def index
+  def show
     @product = Product.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
