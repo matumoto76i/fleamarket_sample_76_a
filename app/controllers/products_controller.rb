@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_parents, only: [:new, :create, :edit]
+  before_action :set_parents, only: [:new, :create]
+  before_action :set_products, only: [:edit, :update]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -31,6 +32,16 @@ class ProductsController < ApplicationController
     @category_grandchildren = Category.find(params[:child_id]).children
   end
 
+  def edit
+    @grandchild = Category.find(@product.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+  end
+
+  def update
+
+  end
+
   private
 
   def product_params
@@ -39,6 +50,10 @@ class ProductsController < ApplicationController
 
   def set_parents
     @category_parents = Category.where(ancestry: nil)
+  end
+
+  def set_products
+    @product = Product.find(params[:id])
   end
 
 
