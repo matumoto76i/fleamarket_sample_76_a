@@ -104,6 +104,23 @@
     }
   }
 }
+.btn__red {
+  display: block;
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 50%;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: 100px auto;
+}
+h2 {
+  margin: 100px;
+  text-align: center;
+}
 .confirm__footer {
   margin-top: auto;
   text-align: center;
