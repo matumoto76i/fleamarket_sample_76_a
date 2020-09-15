@@ -1,0 +1,20 @@
+.new__header
+  .new__icon
+    = link_to image_tag('logo/logo.png',class: 'icon-image')
+.main-new
+  .product-content
+    = form_with model: @product, class: "form" do |f|
+      .product-content__detail
+        .item-detail
+          %p 商品の詳細
+          <br>
+        #category.category
+          .category-name
+            =f.label :カテゴリー
+            %span.required 必須
+            #category_content.category-form
+              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{prompy:'選択してください', selected: @parent.id}, {id: "category_form", class: "form-text"}
+            #children-box.category-form 
+              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}"), :id, :name,{prompy:'選択してください', selected: @child.id},{id: "category_form", class: "form-text"}
+            #grandchildren-box.category-form 
+              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}/#{@child.id}"), :id, :name,{prompy:'選択してください', selected: @grandchild.id},{id: "category_form", class: "form-text"}
