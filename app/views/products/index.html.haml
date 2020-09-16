@@ -18,8 +18,7 @@
   .main_nav__next
     >
   .main_nav__list
-    -# =link_to '詳細', "/products/#{product.id}", method: :get
-
+  
 .main
   .showmain
     .product
@@ -37,9 +36,9 @@
                 .product_box__list
                   = image_tag "pict/a004.png", class: "list__image"
             .product_price
-              ¥300
+              = product.price
               .product_price__detail
-                (税込)送料込み
+                = product.cost.name
             .product__Detail
               親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
             .product_table
@@ -48,12 +47,12 @@
                   %th
                     出品者
                   %td
-                    hoge
+                    = product.user.nickname
                 %tr
                   %th
                     カテゴリー
                   %td
-                    = link_to "アウター",'/#'
+                    = link_to(product.category.name)
                 %tr
                   %th
                     ブランド
@@ -63,27 +62,27 @@
                   %th
                     商品のサイズ
                   %td
-                    
+                    = product.size.name
                 %tr
                   %th
                     商品の状態
                   %td
-                    未使用に近い
+                    = product.state.name
                 %tr
                   %th
                     配送料の負担
                   %td
-                    送料込み（出品者負担）
+                    = product.cost.name
                 %tr
                   %th
                     発送元の地域
                   %td
-                    = link_to "岩手県",'/#'
+                    = link_to (product.region.name)
                 %tr
                   %th
                     発送日の目安
                   %td
-                    4-7日で発送
+                    = product.period.name
             .optionArea
               .optionArea__left
                 %i.fa.fa-star お気に入り 0
