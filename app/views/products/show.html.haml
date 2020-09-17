@@ -27,15 +27,9 @@
         .product_box
           .product_box__name
             = @product.name
-          .product_box__images
-            .product_box__main_image
-              - @product.images.each do |image, i|
-                = image_tag image.image.url, class: "list__image"
-            .product_box__small_lists
-              .product_box__list
-                = image_tag "pict/a001.png", class: "list__image"
-              .product_box__list
-                = image_tag "pict/a004.png", class: "list__image"
+          .product_box__show_images
+            - @product.images.each do |image, i|
+              = image_tag image.image.url, class: "image-list"
           .product_price
             = @product.price
             .product_price__detail

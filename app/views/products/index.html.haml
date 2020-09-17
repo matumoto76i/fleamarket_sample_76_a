@@ -22,85 +22,85 @@
 .main
   .showmain
     .product
-      - @products.each do |product|
-        .product__top
-          .product_box
-            .product_box__name
-              = product.name
-            .product_box__images
-              .product_box__main_image
-                = image_tag "pict/beef.jpeg", class: "list__image"
-              .product_box__small_lists
-                .product_box__list
-                  = image_tag "pict/a001.png", class: "list__image"
-                .product_box__list
-                  = image_tag "pict/a004.png", class: "list__image"
-            .product_price
-              = product.price
-              .product_price__detail
-                = product.cost.name
-            .product__Detail
-              親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
-            .product_table
-              %table
-                %tr
-                  %th
-                    出品者
-                  %td
-                    = product.user.nickname
-                %tr
-                  %th
-                    カテゴリー
-                  %td
-                    = link_to(product.category.name)
-                %tr
-                  %th
-                    ブランド
-                  %td
-                    =link_to '詳細', "/products/#{product.id}", method: :get
-                %tr
-                  %th
-                    商品のサイズ
-                  %td
-                    = product.size.name
-                %tr
-                  %th
-                    商品の状態
-                  %td
-                    = product.state.name
-                %tr
-                  %th
-                    配送料の負担
-                  %td
-                    = product.cost.name
-                %tr
-                  %th
-                    発送元の地域
-                  %td
-                    = link_to (product.region.name)
-                %tr
-                  %th
-                    発送日の目安
-                  %td
-                    = product.period.name
-            .optionArea
-              .optionArea__left
-                %i.fa.fa-star お気に入り 0
-              .optionArea__right
-                = link_to root_path do
-                  %i.fa.fa-flag
-                  不適切な商品の通報
-          .confirm-link
-            = link_to "この商品を購入する","/confirm"
-          .commentBox
-            = form_tag root_path do
-              .commentContents
-                %textarea.new_comment
-                %p
-                  相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
-                %button{type: "submit", class: "comment_btn"}
-                  %i.fa.fa-comment
-                    コメントをする
+      
+      .product__top
+        .product_box
+          .product_box__name
+            商品名
+          .product_box__images
+            .product_box__show_image
+              = image_tag "pict/beef.jpeg", class: "list__image"
+            .product_box__small_lists
+              .product_box__list
+                = image_tag "pict/a001.png", class: "list__image"
+              .product_box__list
+                = image_tag "pict/a004.png", class: "list__image"
+          .product_price
+            お値段
+            .product_price__detail
+              発送状況
+          .product__Detail
+            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
+          .product_table
+            %table
+              %tr
+                %th
+                  出品者
+                %td
+                  ユーザー名
+              %tr
+                %th
+                  カテゴリー
+                %td
+                  =link_to "アウター"
+              %tr
+                %th
+                  ブランド
+                %td
+                  任意で入力
+              %tr
+                %th
+                  商品のサイズ
+                %td
+                  ビッグマム
+              %tr
+                %th
+                  商品の状態
+                %td
+                  よろしい
+              %tr
+                %th
+                  配送料の負担
+                %td
+                  着払い
+              %tr
+                %th
+                  発送元の地域
+                %td
+                  = link_to "大阪府", "#"
+              %tr
+                %th
+                  発送日の目安
+                %td
+                  ２〜３日
+          .optionArea
+            .optionArea__left
+              %i.fa.fa-star お気に入り 0
+            .optionArea__right
+              = link_to root_path do
+                %i.fa.fa-flag
+                不適切な商品の通報
+        .confirm-link
+          = link_to "この商品を購入する","/confirm"
+        .commentBox
+          = form_tag root_path do
+            .commentContents
+              %textarea.new_comment
+              %p
+                相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
+              %button{type: "submit", class: "comment_btn"}
+                %i.fa.fa-comment
+                  コメントをする
     .links
       %li
         = link_to "< 前の商品",'/#'
@@ -121,5 +121,8 @@
                   %li 
                     %i.fas.fa-star 0
                 %p (税込み)
+    - @products.each do |product|
+      .pro
+        =link_to '詳細', "/products/#{product.id}", method: :get
 .wrapper
   = render "footer_new"
