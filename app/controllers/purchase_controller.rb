@@ -28,6 +28,7 @@ class PurchaseController < ApplicationController
 
   def done
     @product = Product.find(params[:id])
+    Purchaser.create(product_id: @product.id, user_id: current_user.id)
   end
 
 end
