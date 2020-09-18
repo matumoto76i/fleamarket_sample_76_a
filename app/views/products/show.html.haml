@@ -31,10 +31,11 @@
             - @product.images.each do |image, i|
               = image_tag image.image.url, class: "image-list"
           .product_price
+            %li ¥
             = @product.price
-            .product_price__detail
-              = @product.cost.name
-          .product__Detail
+          .product_price__detail
+            = @product.cost.name
+          .product__comment
             親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
           .product_table
             %table
@@ -88,12 +89,12 @@
         
         - if user_signed_in? && current_user.id == @product.user_id
           .edit_btn
-            =link_to "この商品の情報を編集する","/#/#{current_user.id}"
+            =link_to "この商品の情報を編集する","/products/#{@product.id}/edit", method: :get
           .destroy_btn
-            =link_to "この商品の情報を削除する","/#/#{current_user.id}"
+            =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete
         - else
           .confirm-link
-            = link_to "この商品を購入する","/confirm"
+            = link_to "この商品を購入する","/purchase/#{@product.id}", method: :get
         .commentBox
           = form_tag root_path do
             .commentContents
@@ -113,7 +114,8 @@
       .related_images
         = link_to '/#' do
           .container__box__list
-            = image_tag "pict/IMG_9072.jpeg" , class: "list__image"
+            - @product.images.each do |image, i|
+              = image_tag image.image.url, class: "list-image"
             .list__main
               .list__main__name
                 ee
