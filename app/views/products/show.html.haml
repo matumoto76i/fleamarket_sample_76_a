@@ -111,8 +111,8 @@
       %li
         = link_to "後ろの商品 >",'/#'
     .relatedItems
-      = link_to "/products/#{@product.id}", method: :get do
-        .related-link
+      .related-link
+        = link_to "/products/#{@product.id}", method: :get do
           = @product.category.name
           = "をもっと見る"
     .relatedlist
