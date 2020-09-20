@@ -107,7 +107,6 @@ a {
             justify-content: center;
             text-align: center;
             list-style: none;
-
           }
 
           .product_price__detail {
@@ -175,6 +174,57 @@ a {
           }
         }
 
+        // 購入・編集・削除ボタンcss
+        .btn-list {
+          width: 100%;
+          height: 50px;
+          display: flex;
+          justify-content: space-around;
+          text-align: center;
+
+          .edit_btn {
+            background-color: #3ccace;
+            width: 40%;
+            height: 50px;
+            line-height: 50px;
+            color: #ffffff;
+            border: 1px #3ccace solid;
+            border-radius: 100px;
+            font-size: 20px;
+            margin-top: 10px;
+          }
+
+          .destroy_btn {
+            background-color: red;
+            width: 40%;
+            height: 50px;
+            line-height: 50px;
+            color: #ffffff;
+            border: 1px #3ccace solid;
+            border-radius: 100px;
+            font-size: 20px;
+            margin-top: 10px;
+          }
+
+          .confirm-link {
+            background-color: red;
+            width: 60%;
+            height: 50px;
+            line-height: 50px;
+            color: #ffffff;
+            border: 1px #3ccace solid;
+            font-size: 20px;
+            margin-top: 10px;
+            border-radius: 100px;
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+        }
+
         // コメント入力欄
         .commentBox {
           width: 100%;
@@ -238,6 +288,7 @@ a {
       }
     }
 
+    // index,showページ下部の商品一覧css
     .relatedlist{
       width: 700px;
       height: 300px;
@@ -257,8 +308,6 @@ a {
         display: flex;
 
         .container__box__list {
-          height: 300px;
-          width: 200px;
 
           .list__image {
             height: 150px;

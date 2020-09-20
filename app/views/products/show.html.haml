@@ -31,7 +31,7 @@
             - @product.images.each do |image, i|
               = image_tag image.image.url, class: "image-list"
           .product_price
-            %li ¥
+            = "¥"
             = @product.price
           .product_price__detail
             = @product.cost.name
@@ -86,15 +86,16 @@
               = link_to root_path do
                 %i.fa.fa-flag
                 不適切な商品の通報
-        
-        - if user_signed_in? && current_user.id == @product.user_id
-          .edit_btn
-            =link_to "この商品の情報を編集する","/products/#{@product.id}/edit", method: :get
-          .destroy_btn
-            =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete
-        - else
-          .confirm-link
-            = link_to "この商品を購入する","/purchase/#{@product.id}", method: :get
+        -# ログインしているユーザーと出品したユーザーが一致しているかどうか
+        .btn-list
+          - if user_signed_in? && current_user.id == @product.user_id
+            .edit_btn
+              =link_to "この商品の情報を編集する","/products/#{@product.id}/edit", method: :get
+            .destroy_btn
+              =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete
+          - else
+            .confirm-link
+              = link_to "この商品を購入する","/purchase/#{@product.id}", method: :get
         .commentBox
           = form_tag root_path do
             .commentContents
@@ -113,12 +114,12 @@
       = link_to "/products/#{@product.id}", method: :get do
         .related-link
           = @product.category.name
-          %li をもっと見る
+          = "をもっと見る"
     .relatedlist
       .related_images
         = link_to "/products/#{@product.id}", method: :get do
           .container__box__list
-            = image_tag @product.images[0].image.to_s, class: "list-image"
+            = image_tag @product.images[0].image.to_s, class: "list__image"
             .list__main
               .list__main__name
                 = @product.name
