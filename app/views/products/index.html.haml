@@ -108,18 +108,7 @@
         = link_to "後ろの商品 >",'/#'
     .relatedItems
       = link_to "関連商品をもっと見る",'/#'
-      .related_images
-        = link_to '/#' do
-          .container__box__list
-            = image_tag "pict/IMG_9072.jpeg" , class: "list__image"
-            .list__main
-              .list__main__name
-                ee
-              .list_details
-                %ul
-                  %li 1000円
-                  %li 
-                    %i.fas.fa-star 0
-                %p (税込み)
+    .wrapper
+      = render "relatedlist"
 .wrapper
   = render "footer_new"

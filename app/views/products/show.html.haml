@@ -14,7 +14,7 @@
   .main_nav__next
     >
   .main_nav__list
-    = link_to "ジャンル",'/#'
+    = link_to(@product.category.name)
   .main_nav__next
     >
   .main_nav__list
@@ -110,18 +110,23 @@
       %li
         = link_to "後ろの商品 >",'/#'
     .relatedItems
-      = link_to "関連商品をもっと見る",'/#'
+      = link_to "/products/#{@product.id}", method: :get do
+        .related-link
+          = @product.category.name
+          %li をもっと見る
+    .relatedlist
       .related_images
-        = link_to '/#' do
+        = link_to "/products/#{@product.id}", method: :get do
           .container__box__list
-            - @product.images.each do |image, i|
-              = image_tag image.image.url, class: "list-image"
+            = image_tag @product.images[0].image.to_s, class: "list-image"
             .list__main
               .list__main__name
-                ee
+                = @product.name
               .list_details
                 %ul
-                  %li 1000円
+                  %li 
+                    = "¥"
+                    = @product.price
                   %li 
                     %i.fas.fa-star 0
                 %p (税込み)

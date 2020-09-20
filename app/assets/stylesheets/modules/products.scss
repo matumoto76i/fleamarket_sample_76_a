@@ -226,20 +226,35 @@ a {
 
     .relatedItems {
       width: 700px;
+      height: 50px;
+      font-size: 20px;
+      margin: 0 auto;
+      color: #3ccace;
+      text-align: start;
+
+      .related-link{
+        display: flex;
+        list-style: none;
+      }
+    }
+
+    .relatedlist{
+      width: 700px;
       height: 300px;
       font-size: 20px;
       margin: 0 auto;
       color: #3ccace;
       text-align: start;
 
+
       .related_images {
         width: 220px;
-        height: 200px;
         padding-top: 10px;
         color: black;
         font-size: 16px;
         text-align: center;
         padding-top: 20px;
+        display: flex;
 
         .container__box__list {
           height: 300px;

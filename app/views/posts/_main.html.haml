@@ -94,18 +94,22 @@
     .container__box__head
       = link_to "新規投稿商品",'/#'
     .container__box__lists
-      = link_to '/#' do
-        .container__box__list
-          = image_tag "pict/beef.jpeg", class: "list__image"
-          .list__body
-            .list__body__name
-              テスト
-            .list__body__details
-              %ul
-                %li 10000円
-                %li 
-                  %i.fas.fa-star 1
-              %p (税込み)
+      - @product.each do |product|
+        = link_to product_path(id: product.id) do
+          .container__box__list
+            -ft_image = product.images.first
+            = image_tag ft_image.image.url, class: "list__image"
+            .list__body
+              .list__body__name
+                = product.name
+              .list__body__details
+                %ul
+                  %li 
+                    = "¥"
+                    = product.price
+                  %li 
+                    %i.fas.fa-star 1
+                %p (税込み)
       = link_to '/#' do
         .container__box__list
           = image_tag "pict/IMG_9072.jpeg", class: "list__image"
