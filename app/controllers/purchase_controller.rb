@@ -1,5 +1,4 @@
-class PurchaseController < ApplicationController
- 
+class PurchaseController < ApplicationController 
   require 'payjp'
 
   def show
