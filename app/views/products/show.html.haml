@@ -92,7 +92,7 @@
             .edit_btn
               =link_to "この商品の情報を編集する","/products/#{@product.id}/edit", method: :get
             .destroy_btn
-              =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete
+              =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
           - else
             .confirm-link
               = link_to "この商品を購入する","/purchase/#{@product.id}", method: :get

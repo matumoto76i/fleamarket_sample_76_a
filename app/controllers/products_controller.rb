@@ -23,7 +23,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy
+    if user_signed_in? && current_user.id == @product.user_id
+      @product.destroy
+    else
+      redirect_to root_path, alert: "削除に失敗しました"
+    end
   end
 
   def edit
