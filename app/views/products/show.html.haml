@@ -35,8 +35,6 @@
             = @product.price
           .product_price__detail
             = @product.cost.name
-          .product__comment
-            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
           .product_table
             %table
               %tr
@@ -54,6 +52,11 @@
                   ブランド
                 %td
                   = @product.brand
+              %tr
+                %th
+                  商品説明
+                %td
+                  = @product.description
               %tr
                 %th
                   商品のサイズ
@@ -96,6 +99,8 @@
           - else
             .confirm-link
               = link_to "この商品を購入する","/purchase/#{@product.id}", method: :get
+        .comment_index
+          この商品に対するコメント
         .commentBox
           = form_tag root_path do
             .commentContents
