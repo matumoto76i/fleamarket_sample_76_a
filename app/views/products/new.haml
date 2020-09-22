@@ -91,9 +91,19 @@
           .price-form
             %span ¥
             = f.number_field :price, placeholder: "0", class: "price-number"
-      .send-btn
-        = f.submit '出品する', class: "send-btn__form"
-        = link_to 'もどる', root_path, class: "send-btn__back"
+      .btn-list
+        - if user_signed_in?
+          .send-btn
+            = f.submit '出品する', class: "send-btn__form"
+            = link_to 'トップにもどる', root_path, class: "send-btn__back"
+        - else
+          %p
+            ※商品を出品するにはアカウント登録またはログインが必要です。
+          .registration__btn
+            .registration__btn__list
+              =link_to "ログイン",new_user_session_path, method: :get
+            .registration__btn__list
+              =link_to "新規会員登録",new_user_registration_path, method: :get
       .attention
         %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 .footer_new
