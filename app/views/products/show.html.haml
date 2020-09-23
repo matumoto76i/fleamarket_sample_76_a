@@ -92,13 +92,22 @@
         -# ログインしているユーザーと出品したユーザーが一致しているかどうか
         .btn-list
           - if user_signed_in? && current_user.id == @product.user_id
-            .edit_btn
-              =link_to "この商品の情報を編集する","/products/#{@product.id}/edit", method: :get
-            .destroy_btn
-              =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
-          - else
+            .btns
+              .edit_btn
+                =link_to "この商品の情報を編集する","/products/#{@product.id}/edit", method: :get
+              .destroy_btn
+                =link_to "この商品の情報を削除する","/products/#{@product.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
+          - elsif user_signed_in?
             .confirm-link
               = link_to "この商品を購入する","/purchase/#{@product.id}", method: :get
+          - else
+            %p
+              ※商品を購入するにはアカウント登録またはログインが必要です。
+            .registration__btn
+              .registration__btn__list
+                =link_to "ログイン",new_user_session_path, method: :get
+              .registration__btn__list
+                =link_to "新規会員登録",new_user_registration_path, method: :get
         .comment_index
           この商品に対するコメント
         .commentBox
