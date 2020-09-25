@@ -1,6 +1,7 @@
 .new__header
   .new__icon
-    = link_to image_tag('logo/logo.png',class: 'icon-image')
+    = link_to new_product_path, method: :get do
+      = image_tag('logo/logo.png',class: 'icon-image')
 .main-new
   .product-content
     = form_with model: @product, class: "form" do |f|
