@@ -39,7 +39,16 @@ class ProductsController < ApplicationController
   end
 
   def update
+    if @product.update!(product_params)
+      redirect_to root_path, notice: '商品を編集しました'
+    else
+      render :edit
+      flash[:alert] = '編集できませんでした'
+    end
+  end
 
+  def destroy
+    @product.destroy
   end
 
   private
