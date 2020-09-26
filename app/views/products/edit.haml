@@ -3,7 +3,8 @@
     = link_to image_tag('logo/logo.png',class: 'icon-image')
 .main-new
   .product-content
-    = form_with model: @product, class: "form", id: "product-form-edit" do |f|
+    = form_with model: @product, class: "form", id: "product-form-edit", local: true do |f|
+      = render 'layouts/error_messages', model: f.object
       .product-content__image
         .image-title
           = f.label :出品画像

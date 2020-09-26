@@ -42,8 +42,7 @@ class ProductsController < ApplicationController
     if @product.update!(product_params)
       redirect_to root_path, notice: '商品を編集しました'
     else
-      render :edit
-      flash[:alert] = '編集できませんでした'
+      render "edit"
     end
   end
 
