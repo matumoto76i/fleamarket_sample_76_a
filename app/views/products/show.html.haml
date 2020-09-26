@@ -30,6 +30,10 @@
           .product_box__show_images
             - @product.images.each do |image, i|
               = image_tag image.image.url, class: "image-list"
+              -if @product.purchasers.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
           .product_price
             = "¥"
             = @product.price

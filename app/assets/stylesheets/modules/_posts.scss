@@ -348,38 +348,99 @@ a {
       color: #3ccace;
       text-align: center;
     }
-    .container__box__lists {
+    .wrapper {
       width: 100%;
       margin: 26px auto;
       display: flex;
       overflow: scroll;
 
-      .container__box__list {
-        width: 220px;
+      .relatedlist {
+        width: 700px;
+        height: 300px;
+        font-size: 20px;
+        color: #3ccace;
+        text-align: start;
 
-        .list__image {
+        .related_images {
           width: 220px;
-          height: 150px;
-          object-fit: cover;
-        }
-        .list__body {
-          background-color: white;
-          color: #333;
-          padding: 16px;
+          padding-top: 10px;
+          color: black;
+          font-size: 16px;
+          text-align: center;
+          padding-top: 20px;
+          display: flex;
 
-          &__name {
-            overflow: hidden;
-            line-height: 1.5;
-            font-size: 16px;
-          }
-          ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-          p {
-            font-size: 10px;
-            text-align: left;
+          .container__box__list {
+            width: 220px;
+
+            .list__image {
+              width: 220px;
+              height: 150px;
+              object-fit: cover;
+            }
+            .items-box_photo__sold {
+              width: 0;
+              height: 0;
+              border-top: 35px solid #ea352d;
+              border-right: 35px solid transparent;
+              border-bottom: 35px solid transparent;
+              border-left: 35px solid #ea352d;
+              z-index: 100;
+              position: relative;
+              top: -154px;
+              left: -0px;
+              &__inner {
+                transform: rotate(-45deg);
+                font-size: 15px;
+                margin: -25px -25px 0px -45px;
+                color: #fff;
+                letter-spacing: 2px;
+                font-weight: 400;
+              }
+            }
+            .list__main2 {
+              margin-top: 70px;
+              padding: 16px;
+              color: #333;
+
+              &__name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .list_details {
+                ul {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                }
+                p {
+                  font-size: 10px;
+                  text-align: left;
+                }
+              }
+            }
+            .list__main {
+              color: #333;
+              padding: 16px;
+
+              &__name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .list_details {
+                ul {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                }
+                p {
+                  font-size: 10px;
+                  text-align: left;
+                }
+              }
+            }
           }
         }
       }
