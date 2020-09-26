@@ -17,7 +17,7 @@
                     = image_tag image.image.url,data: {index: index}, width: "110", height: "130", class: "pre-image"
                   .lower-box
                     .edit-box 編集
-                    .delete-box 削除
+                    .update-delete_box 削除
           .edit-file
             .cleafix
               %ul#previews
@@ -56,9 +56,9 @@
             #category_content.category-form
               = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{prompy:'選択してください', selected: @parent.id}, {id: "category_form", class: "form-text"}
             #children-box.category-form 
-              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}"), :id, :name,{prompy:'選択してください', selected: @child.id},{id: "category_form", class: "form-text"}
+              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}"), :id, :name,{prompy:'選択してください', selected: @child.id},{id: "child_category_form", class: "form-text"}
             #grandchildren-box.category-form 
-              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}/#{@child.id}"), :id, :name,{prompy:'選択してください', selected: @grandchild.id},{id: "category_form", class: "form-text"}
+              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}/#{@child.id}"), :id, :name,{prompy:'選択してください', selected: @grandchild.id},{id: "grandchild_category_form", class: "form-text"}
         .size
           .size-select
             = f.label :サイズ
