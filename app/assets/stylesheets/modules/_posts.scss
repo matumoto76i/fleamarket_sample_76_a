@@ -348,7 +348,7 @@ a {
       color: #3ccace;
       text-align: center;
     }
-    .container__box__lists {
+    .wrapper {
       width: 100%;
       margin: 26px auto;
       display: flex;
@@ -358,7 +358,6 @@ a {
         width: 700px;
         height: 300px;
         font-size: 20px;
-        margin: 0 auto;
         color: #3ccace;
         text-align: start;
 
