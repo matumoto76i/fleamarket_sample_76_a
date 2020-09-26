@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
 
   function preview(num, url){
-    let html = $(`<div class="image-preview_box" data-index="${num}"><div class="wrapper-box"><img class="pre-image2" src="${url}" data-index="${num}"></div><div class="lower-box"></div>`); 
+    let html = $(`<div class="image-preview_box" data-index="${num}"><div class="wrapper-box"><img class="pre-image2" src="${url}" data-index="${num}"></div><div class="lower-box"><div class="delete-box">削除</div></div>`); 
     return html;
   }
 
@@ -10,12 +10,6 @@ $(document).on('turbolinks:load', function(){
   <input class="edit-upload add-upload" type="file" name="product[images_attributes][${num}][image]" id = "product_images_attributes_${num}_image" data-index="${num}">`);
     return html;
   }
-  
-  // function editBtn(num){
-  //   let  html = $(`
-  // <input class="edit-upload" type="file" name="product[images_attributes][${num}][image]" id = "product_images_attributes_${num}_image" data-index="${num}">`);
-  //   return html;
-  // }
   
   $firstImage = $('.pre-image').length;
 
@@ -86,7 +80,7 @@ $(document).on('turbolinks:load', function(){
 
 
   // 削除ボタンの処理
-  $(".image-preview_box").on('click','.delete-box',function(){
+  $(".image-preview_box").on('click','.update-delete_box',function(){
       // チェックボックスの処理
       let targetIndex = $(this).parent().parent().data('index')
 
@@ -112,12 +106,6 @@ $(document).on('turbolinks:load', function(){
       }else if($count == 5){
         ('.edit-upload').hide();
       }
-  });
-
-  $(".image-preview_box").on('click','.delete-box2',function(){
-    console.log(this);
-    // let targetIndex = $(this).parent().parent().data('index');
-    // console.log(targetIndex);
   });
   
 });

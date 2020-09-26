@@ -9,6 +9,7 @@ $(document).on('turbolinks:load', function(){
       return html;
     }
 
+
     $ul = $('#previews')
     $li = $(this).parents('li');
     $label = $(this).parents('.upload-label');
@@ -18,10 +19,8 @@ $(document).on('turbolinks:load', function(){
 
       let reader = new FileReader();
       
-      // プレビューに追加させるために、inputから画像ファイルを読み込む。
       reader.readAsDataURL(e.target.files[0]);
-
-      //画像ファイルが読み込んだら、処理が実行される。 
+ 
       reader.onload = function(e){
 
         $(preview).find('.preview').attr('src', e.target.result);
@@ -62,7 +61,7 @@ $(document).on('turbolinks:load', function(){
   })
 
   $(document).on('click','.delete-box',function(){
-    let append_input = $(`<li class="input"><label class="upload-label"><div class="input-area"><input class="hidden image_upload" type="file" ></div></div></label></li>`)
+
     $ul = $('#previews')
     $lis = $ul.find('.image-preview');
     $input = $ul.find('.input');
@@ -78,7 +77,7 @@ $(document).on('turbolinks:load', function(){
       $('#previews li:last-child').css({
         'width': `calc(100% - (20% * ${$lis.length}))`
       })
-      // $ul.append(append_input)
+
     }
     else if($lis.length == 5 ){
       $('#previews li:last-child').css({
