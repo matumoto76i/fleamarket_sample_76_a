@@ -369,10 +369,10 @@ a {
           border-right: 35px solid transparent;
           border-bottom: 35px solid transparent;
           border-left: 35px solid #ea352d;
-          z-index: 100;
           position: relative;
           top: -154px;
-          left: -0px;
+          left: 0px;
+
           &__inner {
             transform: rotate(-45deg);
             font-size: 15px;
@@ -382,31 +382,35 @@ a {
             font-weight: 400;
           }
         }
-        .list__main2 {
-          margin-top: 70px;
-          padding: 16px;
+        .list__body {
+          background-color: white;
           color: #333;
+          padding: 16px;
+          z-index: 100;
+          position: relative;
+          top: -70px;
+          left: 0px;
 
           &__name {
             overflow: hidden;
             line-height: 1.5;
             font-size: 16px;
           }
-          .list_details {
-            ul {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            }
-            p {
-              font-size: 10px;
-              text-align: left;
-            }
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          p {
+            font-size: 10px;
+            text-align: left;
           }
         }
-        .list__body {
-          color: #333;
+
+        .list__main {
+          background-color: white;
           padding: 16px;
+          color: #333;
 
           &__name {
             overflow: hidden;
