@@ -22,7 +22,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index]
   resources :users, only: [:index, :show]
-  resources :products
+  resources :products do
+    resources :comments, only: :create
+  end
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -37,7 +39,4 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
-
-  resources :comments, only: [:index, :create]
-
 end

@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   enum situation: { published: 0, sold_out: 1}
 
   has_many :images, dependent: :destroy
-  has_many :comment
+  has_many :comments
   belongs_to :category
   belongs_to :user, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
