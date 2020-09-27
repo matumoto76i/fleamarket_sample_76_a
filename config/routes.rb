@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index]
   resources :users, only: [:index, :show]
   resources :products do
-    resources :comments, only: :create
+    resources :comments, only: [:create]
   end
   resources :card, only: [:new, :show] do
     collection do

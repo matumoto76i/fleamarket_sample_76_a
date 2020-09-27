@@ -122,7 +122,8 @@
           - if @comments
             - @comments.each do |comment|
               %p
-                = comment.user.nickname
+                = link_to comment.user.nickname, "/#/"
+                = ":"
                 = comment.text
         .wrapper
           = render "comment"

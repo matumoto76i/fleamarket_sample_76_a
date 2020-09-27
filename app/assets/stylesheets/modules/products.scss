@@ -270,15 +270,20 @@ a {
           padding: 30px;
           width: 100%;
           list-style: none;
-
+          
           p {
             width: 100%;
             padding: 10px;
-
             background-color: #fff;
             display: flex;
             justify-content: start;
+            border: 1px #3ccace solid;
+            margin: 10px;
 
+            a{
+              padding-right: 10px;
+              color: #3ccace;
+            }
           }
         }
 
