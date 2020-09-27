@@ -48,11 +48,9 @@ class ProductsController < ApplicationController
 
   def destroy
     if user_signed_in? && current_user.id == @product.user_id
-      if @product.destroy
-        redirect_to root_path, notice: '商品を削除しました'
-      else
-        render "show", alert: "削除に失敗しました"
-      end
+      @product.destroy
+    else
+      render "show", alert: "削除に失敗しました"
     end
   end
 
