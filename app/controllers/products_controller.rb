@@ -47,7 +47,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    if @product.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      render "edit"
+    end
   end
 
   private
