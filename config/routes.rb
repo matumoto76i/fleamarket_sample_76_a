@@ -30,10 +30,14 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
   resources :purchase, only: [:show] do
     member do
       post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
     end
   end
+
+  resources :comments, only: [:index, :create]
+
 end
