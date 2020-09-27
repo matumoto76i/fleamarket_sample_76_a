@@ -6,11 +6,11 @@
   .main_nav__next
     >
   .main_nav__list
-    = link_to "カテゴリー",'/#'
+    = link_to(@product.category.parent.parent.name)
   .main_nav__next
     >
   .main_nav__list
-    = link_to "服のサイズなど",'/#'
+    = link_to(@product.category.parent.name)
   .main_nav__next
     >
   .main_nav__list
@@ -50,6 +50,10 @@
                 %th
                   カテゴリー
                 %td
+                  = link_to(@product.category.parent.parent.name)
+                  %br
+                  = link_to(@product.category.parent.name)
+                  %br
                   = link_to(@product.category.name)
               %tr
                 %th
