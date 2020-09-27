@@ -117,7 +117,13 @@
               .registration__btn__list
                 =link_to "新規会員登録",new_user_registration_path, method: :get
         .comment_index
-          コメント表示欄<br>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
+          %li
+            = "＜質問・コメント一覧＞"
+          - if @comments
+            - @comments.each do |comment|
+              %p
+                = comment.user.nickname
+                = comment.text
         .wrapper
           = render "comment"
     .links

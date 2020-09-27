@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     Comment.create(comment_params)
-    render "create"
+    redirect_to controller: "product", action: "show"
   end
 
   private

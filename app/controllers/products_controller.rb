@@ -21,7 +21,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @parents = Category.all.order("id ASC").limit(13)
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
 

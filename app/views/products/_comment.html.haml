@@ -1,5 +1,5 @@
 .commentBox
-  = form_with model: @product, class: "form" do |f|
+  = form_with(model: [@product, @comment]) do |f|
     .commentContents
       = f.text_area :text, class: "new_comment"
       %p
