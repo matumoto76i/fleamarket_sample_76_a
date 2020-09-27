@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_one :address
   has_many :products
   has_many :purchasers
+  has_many :comment
 end
