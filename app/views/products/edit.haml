@@ -1,0 +1,118 @@
+.new__header
+  .new__icon
+    = link_to image_tag('logo/logo.png',class: 'icon-image')
+.main-new
+  .product-content
+    = form_with model: @product, class: "form", id: "product-form-edit", local: true do |f|
+      = render 'layouts/error_messages', model: f.object
+      .product-content__image
+        .image-title
+          = f.label :出品画像
+          %span.required 必須
+          .form-image__text 最大5枚までアップロードできます
+          #image-edit_box.edit-preview
+            - @product.images.each_with_index do |image, index|
+              - if @product.persisted?
+                .image-preview_box{data: {index: index}}
+                  .wrapper-box
+                    = image_tag image.image.url,data: {index: index}, width: "110", height: "130", class: "pre-image"
+                  .lower-box
+                    .edit-box 編集
+                    .update-delete_box 削除
+          .edit-file
+            .cleafix
+              %ul#previews
+                %li.input
+                  %label.upload-label
+                    %p クリックしてファイルをアップロード
+                    - if @product.persisted?
+                      .add-area
+                        = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", data: {index: @product.images.count }, class: 'edit-upload add-upload'
+                    = f.fields_for :images do |image|
+                      .input-area{data: {index: image.index}}
+                        = image.file_field :image, class: "edit-upload"
+                        = image.check_box :_destroy, data: {index: image.index}, class: "hidden-destroy"
+                    .edit-area
+      .product-content__info
+        .info-name
+          .name
+            = f.label :商品名
+            %span.required 必須
+          .name-form
+            = f.text_field :name, class: "form-text", placeholder: '40文字まで'
+        .info-describe
+          .describe
+            = f.label :商品の説明
+            %span.required 必須
+          .describe-form
+            = f.text_area :description, class: "form-area", placeholder: "商品の説明""(色、素材、重さ、定価、注意点など)"
+      .product-content__detail
+        .item-detail
+          %p 商品の詳細
+          <br>
+        #category.category
+          .category-name
+            =f.label :カテゴリー
+            %span.required 必須
+            #category_content.category-form
+              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{prompy:'選択してください', selected: @parent.id}, {id: "category_form", class: "form-text"}
+            #children-box.category-form 
+              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}"), :id, :name,{prompy:'選択してください', selected: @child.id},{id: "child_category_form", class: "form-text"}
+            #grandchildren-box.category-form 
+              = f.collection_select :category_id, Category.where(ancestry: "#{@parent.id}/#{@child.id}"), :id, :name,{prompy:'選択してください', selected: @grandchild.id},{id: "grandchild_category_form", class: "form-text"}
+        .size
+          .size-select
+            = f.label :サイズ
+            %span.required 必須
+          .size-form
+            = f.collection_select :size_id, Size.all, :id, :name, { include_blank: "選択してください"}, class: "form-text"
+        .brand
+          .brand-name
+            =f.label :ブランド
+            %span.optional 任意
+          .brand-form
+            = f.text_field :brand, class: "form-text", placeholder: "例)シャネル"
+        .state
+          .state-name
+            =f.label :商品の状態
+            %span.required 必須
+          .state-form
+            = f.collection_select :state_id, State.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
+        .product-content__send
+        %p 配送について
+        <br>
+        .cost
+          .cost-name
+            = f.label :配送料の負担
+            %span.required 必須
+          .cost-form
+            = f.collection_select :cost_id, Cost.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
+        .region
+          .region-name
+            = f.label :発送元の地域
+            %span.required 必須
+          .region-form
+            = f.collection_select :region_id, Region.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
+        .period
+          .period-name
+            = f.label :発送までの日数
+            %span.required 必須
+          .period-form
+            = f.collection_select :period_id, Period.all, :id, :name, {include_blank: "選択してください"} ,class: "form-text"
+      .product-content__price
+        %p 価格 (¥300〜9,999,999)
+        <br>
+        .price
+          .price-name
+            = f.label :販売価格
+            %span.required 必須
+          .price-form
+            %span ¥
+            = f.number_field :price, placeholder: "0", class: "price-number"
+      .send-btn
+        = f.submit '編集する', class: "send-btn__form"
+        = link_to 'もどる', root_path, class: "send-btn__back"
+      .attention
+        %p 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+.footer_new
+  = render 'footer_new'
