@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   validates :description,:price,:category,:region,:state,:period,:cost,:size, presence: true 
   validates :images, presence: true
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+  has_many :purchasers
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :region
