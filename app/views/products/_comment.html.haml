@@ -1,8 +1,8 @@
 .commentBox
   - if current_user
-    = form_with(model: [@product, @comment], local: true) do |f|
+    = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
       .commentContents
-        = f.text_area :text, class: "new_comment"
+        = f.text_area :text, class: "text_box"
         %p
           ※相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
         %button{type: "submit", class: "comment_btn"}
