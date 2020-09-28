@@ -1,8 +1,17 @@
+.comment_index
+  %li
+    = "＜質問・コメント一覧＞"
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        = link_to comment.user.nickname, "/users/#{comment.user_id}"
+        = ":"
+        = comment.text
 .commentBox
   - if current_user
     = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
       .commentContents
-        = f.text_area :text, class: "text_box"
+        = f.text_area :text, class: "comment_text_box"
         %p
           ※相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
         %button{type: "submit", class: "comment_btn"}
