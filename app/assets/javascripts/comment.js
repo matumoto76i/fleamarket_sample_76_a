@@ -6,7 +6,7 @@ $(function(){
                     :
                     ${comment.text}
                   </p>
-                  <div class="comment__index__date">
+                  <div class="comment__index__list__date">
                     ${comment.created_at}
                   </div>
                 </div>`
@@ -27,8 +27,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.comment__index').append(html);
-      $('.comment_text_box').val('');
-      $('.comment_btn').prop('disabled', false);
+      $('.comment__box__contents__form').val('');
+      $('.comment__box__contents__btn').prop('disabled', false);
       $('.comment__index').animate({ scrollTop: $('.comment__index')[0].scrollHeight});
     })
     .fail(function(){

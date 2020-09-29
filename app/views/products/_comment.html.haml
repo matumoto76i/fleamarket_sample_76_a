@@ -6,15 +6,15 @@
           = link_to comment.user.nickname, "/users/#{comment.user_id}"
           = ":"
           = comment.text
-        .comment__index__date
-          = comment.created_at.strftime("%Y年%m月%d日")
-.commentBox
+        .comment__index__list__date
+          = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+.comment__box
   - if current_user
     = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
-      .commentContents
-        = f.text_area :text, class: "comment_text_box"
+      .comment__box__contents
+        = f.text_area :text, class: "comment__box__contents__form"
         %p
           ※相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
-        %button{type: "submit", class: "comment_btn"}
+        %button{type: "submit", class: "comment__box__contents__btn"}
           %i.fa.fa-comment
             コメントをする
