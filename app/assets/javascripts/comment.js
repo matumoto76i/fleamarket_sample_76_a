@@ -1,10 +1,15 @@
 $(function(){
   function buildHTML(comment){
-    var html = `<p>
-                  <a href=/users/${comment.user_id}>${comment.user_name}</a>
-                  :
-                  ${comment.text}
-                </p>`
+    var html = `<div class="comment__index__list">
+                  <p>
+                    <a href=/users/${comment.user_id}>${comment.user_name}</a>
+                    :
+                    ${comment.text}
+                  </p>
+                  <div class="comment__index__date">
+                    ${comment.created_at}
+                  </div>
+                </div>`
     return html;
   }
   $('#new_comment').on('submit', function(e){
@@ -21,12 +26,13 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.comment_index').append(html);
+      $('.comment__index').append(html);
       $('.comment_text_box').val('');
       $('.comment_btn').prop('disabled', false);
+      $('.comment__index').animate({ scrollTop: $('.comment__index')[0].scrollHeight});
     })
     .fail(function(){
-      alert('error');
+      alert('通信に失敗しました');
     })
   })
 })

@@ -266,26 +266,34 @@ a {
           }
         }
 
-        .comment_index{
-          padding: 30px;
+        .comment__index{
+          background-color: #fff;
           width: 100%;
-          list-style: none;
-          // max-height: 300px;
-          // overflow: scroll;
-          
-          p {
+          max-height: 500px;
+          padding: 30px;
+          overflow: scroll;
+
+          &__list{
             width: 100%;
-            padding: 10px;
-            background-color: #fff;
-            display: flex;
-            justify-content: start;
             border: 1px #3ccace solid;
             margin: 10px;
+          
+            p {
+              width: 100%;
+              padding: 10px;
+              display: flex;
+              justify-content: start;
 
-            a{
-              padding-right: 10px;
-              color: #3ccace;
+              a{
+                padding-right: 10px;
+                color: #3ccace;
+              }
             }
+          }
+          &__date{
+            display: flex;
+            text-align: start;
+            padding-left: 10px;
           }
         }
 

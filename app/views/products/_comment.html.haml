@@ -1,12 +1,13 @@
-.comment_index
-  %li
-    = "＜質問・コメント一覧＞"
+.comment__index
   - if @comments
     - @comments.each do |comment|
-      %p
-        = link_to comment.user.nickname, "/users/#{comment.user_id}"
-        = ":"
-        = comment.text
+      .comment__index__list
+        %p
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          = ":"
+          = comment.text
+        .comment__index__date
+          = comment.created_at
 .commentBox
   - if current_user
     = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
