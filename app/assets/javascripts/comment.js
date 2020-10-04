@@ -27,8 +27,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.comment__index').append(html);
-      $('.comment__box__contents__form').val('');
-      $('.comment__box__contents__btn').prop('disabled', false);
+      $('#new_comment')[0].reset();
       $('.comment__index').animate({ scrollTop: $('.comment__index')[0].scrollHeight});
     })
     .fail(function(){
