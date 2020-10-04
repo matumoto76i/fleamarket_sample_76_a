@@ -22,7 +22,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index]
   resources :users, only: [:index, :show]
-  resources :products
+  resources :products do
+    resources :comments, only: [:create]
+  end
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
   resources :purchase, only: [:show] do
     member do
       post 'pay', to: 'purchase#pay'

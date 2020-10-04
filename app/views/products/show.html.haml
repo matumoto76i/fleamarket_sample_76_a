@@ -116,17 +116,11 @@
                 =link_to "ログイン",new_user_session_path, method: :get
               .registration__btn__list
                 =link_to "新規会員登録",new_user_registration_path, method: :get
-        .comment_index
-          コメント表示欄<br>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
-        .commentBox
-          = form_tag root_path do
-            .commentContents
-              %textarea.new_comment
-              %p
-                ※相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
-              %button{type: "submit", class: "comment_btn"}
-                %i.fa.fa-comment
-                  コメントをする
+        %h1
+          = "＜質問・コメント一覧＞"
+        -# コメント関連部分テンプレート呼び出し
+        .wrapper
+          = render "comment"
     .links
       %li
         = link_to "< 前の商品",'/#'

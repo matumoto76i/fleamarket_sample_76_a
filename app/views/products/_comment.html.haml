@@ -1,0 +1,20 @@
+.comment__index
+  - if @comments
+    - @comments.each do |comment|
+      .comment__index__list
+        %p
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          = ":"
+          = comment.text
+        .comment__index__list__date
+          = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+.comment__box
+  - if current_user
+    = form_with(model: [@product, @comment], local: true, id: "new_comment") do |f|
+      .comment__box__contents
+        = f.text_area :text, class: "comment__box__contents__form"
+        %p
+          ※相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となる事があります。
+        %button{type: "submit", class: "comment__box__contents__btn"}
+          %i.fa.fa-comment
+            コメントをする
