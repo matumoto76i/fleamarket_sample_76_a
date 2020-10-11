@@ -266,18 +266,21 @@ a {
           }
         }
 
+        h1{
+          font-size: 30px;
+        }
+
         // コメント表示CSS
         .comment__index{
           background-color: #fff;
           width: 100%;
           max-height: 500px;
-          padding: 20px;
           overflow: scroll;
 
           &__list{
-            width: 100%;
+            width: 95%;
             border: 1px #3ccace solid;
-            margin: 10px auto;
+            margin: 15px auto;
             padding-bottom: 10px;
             text-align: start;
           
@@ -301,8 +304,9 @@ a {
         // コメント入力CSS
         .comment__box {
           width: 100%;
-          height: 300px;
+          max-height: 300px;
           background-color: #ffffff;
+          // background-color: #f8f8f8;
           padding: 24px;
           margin: 10px 0px;
 
